@@ -1,0 +1,34 @@
+{
+    "name": "Blog",
+    "alias": "blog",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Blog\\Providers\\BlogServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "admin_menus": [
+        {
+            "icon": "fa fa-edit",
+            "name": "Posts",
+            "route": "admin/blog/posts",
+            "permission": "view_blog-posts"
+        },
+        {
+            "icon": "fa fa-bars",
+            "name": "Categories",
+            "route": "admin/blog/categories",
+            "permission": "view_blog-categories"
+        },
+        {
+            "icon": "fa fa-file",
+            "name": "Pages",
+            "route": "admin/blog/pages",
+            "permission": "view_blog-pages"
+        }
+    ],
+    "permissions": ["blog-posts", "blog-categories", "blog-pages"]
+}
