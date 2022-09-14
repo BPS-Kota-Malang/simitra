@@ -6,7 +6,7 @@
         <a href="{{ url('/')}}">{{ config('app.name', 'Laravel') }}</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-        <a href="{{ url('/')}}">LS</a>
+        <a href="{{ url('/')}}">BPS</a>
     </div>
     <ul class="sidebar-menu">
         <li class="{{ ($currentAdminMenu == 'dashboard') ? $activeClass : '' }}"><a class="nav-link" href="{{ url('admin/dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>

@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{ asset('admin/stisla/plugins/bootstrap-daterangepicker/daterangepicker.css') }}">
         <link rel="stylesheet" href="{{ asset('admin/stisla/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin/stisla/plugins/select2/dist/css/select2.min.css') }}">
+        
         <!-- Template CSS -->
         <link rel="stylesheet" href="{{ asset('admin/stisla/assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('admin/stisla/assets/css/components.css') }}">
