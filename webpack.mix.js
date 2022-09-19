@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +11,52 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+// mix.js("resources/js/app.js", "public/js").postCss(
+//     "resources/css/app.css",
+//     "public/css",
+//     [
+//         //
+//     ]
+// );
+
+let plugins = [
+    "bootstrap",
+    "flag-icon-css",
+    "jqvmap",
+    "summernote",
+    "owl.carousel",
+    "weathericons",
+    "jquery",
+    "jquery-ui-dist",
+    "jquery-sparkline",
+    "popper.js",
+    "jquery.nicescroll",
+    "tooltip.js",
+    "moment",
+    "summernote",
+    "chocolat",
+    "chart.js",
+    "simpleweather",
+    "prismjs",
+    "dropzone",
+    "bootstrap-social",
+    "cleave.js",
+    "bootstrap-daterangepicker",
+    "bootstrap-colorpicker",
+    "bootstrap-timepicker",
+    "bootstrap-tagsinput",
+    "select2",
+    "selectric",
+    "codemirror",
+    "fullcalendar",
+    "datatables",
+    "ionicons201",
+    "sweetalert",
+    "izitoast",
+    "weathericons",
+    "gmaps",
+];
+
+plugins.forEach((plugin) => {
+    mix.copy("./node_modules/" + plugin, "public/library/" + plugin);
+});
