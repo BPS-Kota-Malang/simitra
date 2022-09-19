@@ -9,11 +9,11 @@
 @section('main')
     <div class="card card-primary">
         <div class="card-header">
-            <h4>Forgot Password</h4>
+            <h4>Lupa password</h4>
         </div>
 
         <div class="card-body">
-            <p class="text-muted">We will send a link to reset your password</p>
+            <p class="text-muted">Kami akan mengirimkan link untuk reset password anda</p>
             <form method="POST">
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -23,14 +23,15 @@
                         name="email"
                         tabindex="1"
                         required
-                        autofocus>
+                        autofocus
+                        placeholder="Silahkan masukkan email anda...">
                 </div>
 
                 <div class="form-group">
                     <button type="submit"
                         class="btn btn-primary btn-lg btn-block"
                         tabindex="4">
-                        Forgot Password
+                        Lupa password
                     </button>
                 </div>
             </form>
@@ -39,7 +40,5 @@
 @endsection
 
 @push('scripts')
-    <!-- JS Libraies -->
 
-    <!-- Page Specific JS File -->
 @endpush
