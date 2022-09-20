@@ -2,7 +2,7 @@
 
 [![BPS Preview](https://cdn.antaranews.com/cache/730x487/2020/01/02/IMG_5862.jpg)
 
-## Langkah-langkah untuk menjalakan:
+## Langkah-langkah untuk menjalankan proyek:
 
 -   Clone repo: `git clone https://github.com/IPDS-BPS-Polinema/Manajemen-Mitra.git`
 -   Buka project mitra bps
