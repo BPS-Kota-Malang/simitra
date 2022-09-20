@@ -25,14 +25,16 @@
         <section class="section">
             <div class="d-flex align-items-stretch flex-wrap">
                 <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
-                    <div class="m-3 p-4">
+                    <div class="p-4">
+                        <div class="login-brand">
                         <img src="{{ asset('img/logo.png') }}" alt="logo" width="100"
                             class="shadow-light rounded-circle mb-4 mt-2 border bordered"
                             style="justify-content: center">
-                        <h4 class="text-dark font-weight-normal">Welcome to<span class="font-weight-bold">
+                        </div>
+                        <h4 class="text-dark font-weight-normal" style="text-align: center">Welcome to<span class="font-weight-bold">
                                 SIMITRA</span>
                         </h4>
-                        <p class="text-muted">Sebelum masuk, kamu harus login atau mendaftar jika belum memiliki akun.
+                        <p class="text-muted" style="text-align: center">Sebelum masuk, kamu harus login atau mendaftar jika belum memiliki akun.
                         </p>
                         <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                             @csrf
@@ -102,10 +104,10 @@
                 <div class="col-lg-8 col-12 order-lg-2 min-vh-100 background-walk-y position-relative overlay-gradient-bottom order-1"
                     data-background="{{ asset('img/unsplash/login-bg.jpg') }}">
                     <div class="absolute-bottom-left index-2">
-                        <div class="text-light p-5 pb-2">
+                        <div class="text-light p-5 pb-5">
                             <div class="mb-5 pb-5">
-                                <h1 class="display-4 font-weight-bold mb-2">Sahabat Data</h1>
-                                <h5 class="font-weight-normal text-muted-transparent">BPS - Kota Malang</h5>
+                                <h1 class="display-4 font-weight-bold mb-3">Sahabat Data</h1>
+                                <h5 class="font-weight-normal text-muted-transparent mb-5">BPS - Kota Malang</h5>
                             </div>
                         </div>
                     </div>
