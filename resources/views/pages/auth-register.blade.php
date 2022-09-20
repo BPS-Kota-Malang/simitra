@@ -11,28 +11,26 @@
 @section('main')
     <div class="card card-primary">
         <div class="card-header">
-            <h4>Pendaftaran - Mitra</h4>
+            <h4>Register</h4>
         </div>
 
         <div class="card-body">
             <form method="POST">
                 <div class="row">
                     <div class="form-group col-6">
-                        <label for="frist_name">Nama Awal</label>
+                        <label for="frist_name">First Name</label>
                         <input id="frist_name"
                             type="text"
                             class="form-control"
                             name="frist_name"
-                            autofocus
-                            placeholder="Silahkan masukkan nama awal anda...">
+                            autofocus>
                     </div>
                     <div class="form-group col-6">
-                        <label for="last_name">Nama Akhir</label>
+                        <label for="last_name">Last Name</label>
                         <input id="last_name"
                             type="text"
                             class="form-control"
-                            name="last_name"
-                            placeholder="Silahkan masukkan nama akhir anda...">
+                            name="last_name">
                     </div>
                 </div>
 
@@ -41,8 +39,7 @@
                     <input id="email"
                         type="email"
                         class="form-control"
-                        name="email"
-                        placeholder="Silahkan masukkan email anda...">
+                        name="email">
                     <div class="invalid-feedback">
                     </div>
                 </div>
@@ -55,8 +52,7 @@
                             type="password"
                             class="form-control pwstrength"
                             data-indicator="pwindicator"
-                            name="password"
-                            placeholder="Silahkan masukkan password anda...">
+                            name="password">
                         <div id="pwindicator"
                             class="pwindicator">
                             <div class="bar"></div>
@@ -65,50 +61,46 @@
                     </div>
                     <div class="form-group col-6">
                         <label for="password2"
-                            class="d-block">Konfirmasi Password</label>
+                            class="d-block">Password Confirmation</label>
                         <input id="password2"
                             type="password"
                             class="form-control"
-                            name="password-confirm"
-                            placeholder="Silahkan konfirmasi ulang password anda...">
+                            name="password-confirm">
                     </div>
                 </div>
 
                 <div class="form-divider">
-                    Data Alamat
+                    Your Home
                 </div>
                 <div class="row">
                     <div class="form-group col-6">
-                        <label>Provinsi</label>
+                        <label>Country</label>
                         <select class="form-control selectric">
-                            <option>Jawa Timur</option>
-                            <option>Luar Jawa Timur</option>
+                            <option>Indonesia</option>
+                            <option>Palestine</option>
+                            <option>Syria</option>
+                            <option>Malaysia</option>
+                            <option>Thailand</option>
                         </select>
                     </div>
                     <div class="form-group col-6">
-                        <label>Kecamatan</label>
+                        <label>Province</label>
                         <select class="form-control selectric">
-                            <option>Klojen</option>
-                            <option>Blimbing</option>
-                            <option>Lowokwaru</option>
-                            <option>Sukun</option>
-                            <option>Kedungkandang</option>
-                            <option>Di Luar Malang</option>
+                            <option>West Java</option>
+                            <option>East Java</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-6">
-                        <label>Kelurahan</label>
+                        <label>City</label>
                         <input type="text"
-                            class="form-control"
-                            placeholder="Silahkan masukkan nama kelurahan anda...">
+                            class="form-control">
                     </div>
                     <div class="form-group col-6">
-                        <label>Alamat</label>
+                        <label>Postal Code</label>
                         <input type="text"
-                            class="form-control"
-                            placeholder="Silahkan masukkan alamat anda...">
+                            class="form-control">
                     </div>
                 </div>
 
@@ -119,7 +111,7 @@
                             class="custom-control-input"
                             id="agree">
                         <label class="custom-control-label"
-                            for="agree">Saya setuju dengan persyaratan</label>
+                            for="agree">I agree with the terms and conditions</label>
                     </div>
                 </div>
 

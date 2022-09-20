@@ -13,7 +13,7 @@
         </div>
 
         <div class="card-body">
-            <p class="text-muted">Kami akan mengirimkan link untuk reset password anda</p>
+            <p class="text-muted">We will send a link to reset your password</p>
             <form method="POST">
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -23,20 +23,18 @@
                         name="email"
                         tabindex="1"
                         required
-                        autofocus
-                        placeholder="Silahkan masukkan email anda...">
+                        autofocus>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password Baru</label>
+                    <label for="password">New Password</label>
                     <input id="password"
                         type="password"
                         class="form-control pwstrength"
                         data-indicator="pwindicator"
                         name="password"
                         tabindex="2"
-                        required
-                        placeholder="Silahkan masukkan password baru anda...">
+                        required>
                     <div id="pwindicator"
                         class="pwindicator">
                         <div class="bar"></div>
@@ -45,14 +43,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password-confirm">Konfirmasi Password</label>
+                    <label for="password-confirm">Confirm Password</label>
                     <input id="password-confirm"
                         type="password"
                         class="form-control"
                         name="confirm-password"
                         tabindex="2"
-                        required
-                        placeholder="Silahkan masukkan konfirmasi password anda...">
+                        required>
                 </div>
 
                 <div class="form-group">

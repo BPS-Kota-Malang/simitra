@@ -33,13 +33,14 @@
             <div class="d-flex align-items-stretch flex-wrap">
                 <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
                     <div class="m-3 p-4">
-                        <img src="{{ asset('img/logo.png') }}"
+                        <img src="{{ asset('img/stisla-fill.svg') }}"
                             alt="logo"
-                            width="100"
-                            class="shadow-light rounded-circle mb-4 mt-2 border bordered">
-                        <h4 class="text-dark font-weight-normal">Welcome to<span class="font-weight-bold"> SIMITRA</span>
+                            width="80"
+                            class="shadow-light rounded-circle mb-5 mt-2">
+                        <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Stisla</span>
                         </h4>
-                        <p class="text-muted">Sebelum masuk, kamu harus login atau mendaftar jika belum memiliki akun.</p>
+                        <p class="text-muted">Before you get started, you must login or register if you don't already
+                            have an account.</p>
                         <form method="POST"
                             action="#"
                             class="needs-validation"
@@ -52,8 +53,7 @@
                                     name="email"
                                     tabindex="1"
                                     required
-                                    autofocus
-                                    placeholder="Silahkan isi email anda...">
+                                    autofocus>
                                 <div class="invalid-feedback">
                                     Please fill in your email
                                 </div>
@@ -69,8 +69,7 @@
                                     class="form-control"
                                     name="password"
                                     tabindex="2"
-                                    required
-                                    placeholder="Silahkan isi password anda...">
+                                    required>
                                 <div class="invalid-feedback">
                                     please fill in your password
                                 </div>
@@ -84,14 +83,14 @@
                                         tabindex="3"
                                         id="remember-me">
                                     <label class="custom-control-label"
-                                        for="remember-me">Ingat Saya</label>
+                                        for="remember-me">Remember Me</label>
                                 </div>
                             </div>
 
                             <div class="form-group text-right">
                                 <a href="auth-forgot-password.html"
                                     class="float-left mt-3">
-                                    Lupa password?
+                                    Forgot Password?
                                 </a>
                                 <button type="submit"
                                     class="btn btn-primary btn-lg btn-icon icon-right"
@@ -101,16 +100,16 @@
                             </div>
 
                             <div class="mt-5 text-center">
-                                Belum memilik akun? <a href="auth-register.html">Buat Akun</a>
+                                Don't have an account? <a href="auth-register.html">Create new one</a>
                             </div>
                         </form>
 
                         <div class="text-small mt-5 text-center">
-                            Copyright &copy; Badan Pusat Statistik - Kota Malang. Dibuat dengan IPDS 💙 BPS Polinema
+                            Copyright &copy; Your Company. Made with 💙 by Stisla
                             <div class="mt-2">
-                                <a href="#">Kebijakan</a>
+                                <a href="#">Privacy Policy</a>
                                 <div class="bullet"></div>
-                                <a href="#">Syarat dan Ketentuan</a>
+                                <a href="#">Terms of Service</a>
                             </div>
                         </div>
                     </div>
@@ -119,10 +118,16 @@
                     data-background="{{ asset('img/unsplash/login-bg.jpg') }}">
                     <div class="absolute-bottom-left index-2">
                         <div class="text-light p-5 pb-2">
-                            <div class="mb-5 pb-5">
-                                <h1 class="display-4 font-weight-bold mb-2">Selamat Pagi</h1>
-                                <h5 class="font-weight-normal text-muted-transparent">BPS - Malang</h5>
+                            <div class="mb-5 pb-3">
+                                <h1 class="display-4 font-weight-bold mb-2">Good Morning</h1>
+                                <h5 class="font-weight-normal text-muted-transparent">Bali, Indonesia</h5>
                             </div>
+                            Photo by <a class="text-light bb"
+                                target="_blank"
+                                href="https://unsplash.com/photos/a8lTjWJJgLA">Justin Kauffman</a> on <a
+                                class="text-light bb"
+                                target="_blank"
+                                href="https://unsplash.com">Unsplash</a>
                         </div>
                     </div>
                 </div>
