@@ -29,7 +29,7 @@
                                 <h2>Halo, {{ $user->name }}</h2>
                                 <p class="lead">Kamu sudah masuk dalam sistem, Lengkapi informasi tentang akun anda dan pastikan tidak ketinggalan informasi statistik.
                                 <div class="mt-4">
-                                    <a href="#"
+                                    <a href="{{ route('profile') }}"
                                         class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i>
                                         Informasi Pribadi</a>
                                 </div>

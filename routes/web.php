@@ -118,10 +118,6 @@ Route::get('/components-gallery', function () {
     return view('pages.components-gallery', ['type_menu' => 'components']);
 });
 
-// Route::get('/home', function () {
-//     return view('home', ['type_menu' => 'components']);
-// });
-
 Route::get('/components-multiple-upload', function () {
     return view('pages.components-multiple-upload', ['type_menu' => 'components']);
 });
@@ -237,9 +233,7 @@ Route::get('/features-post-create', function () {
 Route::get('/features-post', function () {
     return view('pages.features-post', ['type_menu' => 'features']);
 });
-Route::get('/features-profile', function () {
-    return view('pages.features-profile', ['type_menu' => 'features']);
-});
+
 Route::get('/features-settings', function () {
     return view('pages.features-settings', ['type_menu' => 'features']);
 });
@@ -269,6 +263,8 @@ Route::get('/credits', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
