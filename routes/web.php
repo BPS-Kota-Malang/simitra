@@ -232,9 +232,6 @@ Route::get('/features-post', function () {
     return view('pages.features-post', ['type_menu' => 'features']);
 });
 
-Route::get('/features-settings', function () {
-    return view('pages.features-settings', ['type_menu' => 'features']);
-});
 Route::get('/features-setting-detail', function () {
     return view('pages.features-setting-detail', ['type_menu' => 'features']);
 });
@@ -265,6 +262,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
+
+Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
