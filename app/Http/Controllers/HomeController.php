@@ -35,5 +35,12 @@ class HomeController extends Controller
         return view('profile',
         ['user' => $user],['type_menu' => 'features']);
     }
+
+    public function activity()
+    {
+        $user = Auth::user();
+        return view('activity',
+        ['user' => $user],['type_menu' => 'features']);
+    }
     
 }

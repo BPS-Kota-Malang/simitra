@@ -253,7 +253,7 @@
                     class="dropdown-item has-icon">
                     <i class="far fa-user"></i>Profil
                 </a>
-                <a href="features-activities.html"
+                <a href="{{ route('activity') }}"
                     class="dropdown-item has-icon">
                     <i class="fas fa-bolt"></i> Aktifitas
                 </a>

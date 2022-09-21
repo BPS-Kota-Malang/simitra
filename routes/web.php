@@ -224,9 +224,7 @@ Route::get('/error-503', function () {
 });
 
 // features
-Route::get('/features-activities', function () {
-    return view('pages.features-activities', ['type_menu' => 'features']);
-});
+
 Route::get('/features-post-create', function () {
     return view('pages.features-post-create', ['type_menu' => 'features']);
 });
@@ -265,6 +263,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+
+Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
