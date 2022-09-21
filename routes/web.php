@@ -117,9 +117,11 @@ Route::get('/components-empty-state', function () {
 Route::get('/components-gallery', function () {
     return view('pages.components-gallery', ['type_menu' => 'components']);
 });
-Route::get('/components-hero', function () {
-    return view('pages.components-hero', ['type_menu' => 'components']);
-});
+
+// Route::get('/home', function () {
+//     return view('home', ['type_menu' => 'components']);
+// });
+
 Route::get('/components-multiple-upload', function () {
     return view('pages.components-multiple-upload', ['type_menu' => 'components']);
 });

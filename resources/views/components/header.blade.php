@@ -33,7 +33,7 @@
                         class="search-close"><i class="fas fa-times"></i></a>
                 </div>
                 <div class="search-item">
-                    <a href="#">#Stisla</a>
+                    <a href="">#Stisla</a>
                     <a href="#"
                         class="search-close"><i class="fas fa-times"></i></a>
                 </div>
@@ -245,7 +245,7 @@
                 <img alt="image"
                     src="{{ asset('img/avatar/avatar-1.png') }}"
                     class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                <div class="d-sm-none d-lg-inline-block">Hi, {{ $user->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title">Logged in 5 min ago</div>
