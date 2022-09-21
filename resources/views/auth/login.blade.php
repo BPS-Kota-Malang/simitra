@@ -39,13 +39,13 @@
                         <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                             @csrf
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input id="username" type="username"
-                                    class="form-control @error('username') is-invalid @enderror" name="username"
-                                    value="{{ old('username') }}" tabindex="1" required autocomplete="username"
-                                    autofocus placeholder="Silahkan isi username anda...">
+                                <label for="email">Email</label>
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" tabindex="1" required autocomplete="email"
+                                    autofocus placeholder="Silahkan isi email anda...">
 
-                                @error('username')
+                                @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
