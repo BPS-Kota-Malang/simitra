@@ -257,16 +257,39 @@
                     class="dropdown-item has-icon">
                     <i class="fas fa-bolt"></i> Aktifitas
                 </a>
-                <a href="features-settings.html"
+                <a href="{{ route('settings') }}"
                     class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Pengaturan
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#"
-                    class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i>Logout
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"></i>
+                    @csrf
+                    </form>
                 </a>
             </div>
         </li>
     </ul>
 </nav>
+
+
+{{-- {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="{{ route('logout') }}"
+       onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+</div> --}}
+
+
+<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+class="dropdown-item has-icon text-danger">
+{{ __('Logout') }}
+<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" class="fas fa-sign-out-alt">
+    @csrf
+</form> --}}
