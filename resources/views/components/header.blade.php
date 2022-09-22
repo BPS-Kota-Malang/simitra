@@ -249,6 +249,10 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title">Logged in 5 min ago</div>
+                <a href="{{ route('home') }}"
+                    class="dropdown-item has-icon m-1">
+                    <i class="fa fa-tachometer left-1"></i>Dashboard
+                </a>
                 <a href="{{ route('profile') }}"
                     class="dropdown-item has-icon">
                     <i class="far fa-user"></i>Profil
@@ -272,24 +276,3 @@
         </li>
     </ul>
 </nav>
-
-
-{{-- {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="{{ route('logout') }}"
-       onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
-    </a>
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
-</div> --}}
-
-
-<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-class="dropdown-item has-icon text-danger">
-{{ __('Logout') }}
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" class="fas fa-sign-out-alt">
-    @csrf
-</form> --}}
