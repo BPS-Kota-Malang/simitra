@@ -1,28 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::redirect('/', '/login');
 
 // Dashboard
-Route::get('/dashboard-general-dashboard', function () {
-    return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
-});
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
 });
@@ -255,15 +241,22 @@ Route::get('/credits', function () {
     return view('pages.credits', ['type_menu' => '']);
 });
 
+
+
+
+
+// Dipakai
 Auth::routes();
+Route::redirect('/', '/login');
 
+// Bagian user
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
-
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
-
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
+
+// Bagian dashboard
+Route::get('/general_dashboard', [App\Http\Controllers\DashboardController::class, 'general_dashboard'])->name('general_dashboard');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
