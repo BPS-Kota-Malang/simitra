@@ -4,7 +4,7 @@
             <a href={{ route('home') }}>SIMITRA</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">ST</a>
+            <a href="{{ route('home') }}">ST</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -16,9 +16,9 @@
                         <a class="nav-link"
                             href="{{ route('general_dashboard') }}">General Dashboard</a>
                     </li>
-                    <li class="{{ Request::is('dashboard-ecommerce-dashboard') ? 'active' : '' }}">
+                    <li class="{{ Request::is('survey_dashboard') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('dashboard-ecommerce-dashboard') }}">Ecommerce Dashboard</a>
+                            href="{{ route('survey_dashboard') }}">Survey Dashboard</a>
                     </li>
                 </ul>
             </li>

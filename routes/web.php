@@ -8,12 +8,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
 
-// Dashboard
-Route::get('/dashboard-ecommerce-dashboard', function () {
-    return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
-});
-
-
 // Layout
 Route::get('/layout-default-layout', function () {
     return view('pages.layout-default-layout', ['type_menu' => 'layout']);
@@ -257,6 +251,7 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 
 // Bagian dashboard
 Route::get('/general_dashboard', [App\Http\Controllers\DashboardController::class, 'general_dashboard'])->name('general_dashboard');
+Route::get('/survey_dashboard', [App\Http\Controllers\DashboardController::class, 'survey_dashboard'])->name('survey_dashboard');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
