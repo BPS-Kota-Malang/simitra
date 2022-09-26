@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 
 @section('content')
@@ -14,16 +14,7 @@
 </div>
 
 
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-        </ul>
-    </div>
-@endif
+
 
 
 {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
@@ -37,11 +28,11 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Permission:</strong>
-            <br/>
+            <br />
             @foreach($permission as $value)
-                <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
                 {{ $value->name }}</label>
-            <br/>
+            <br />
             @endforeach
         </div>
     </div>
@@ -53,4 +44,87 @@
 
 
 <p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
+@endsection --}}
+
+
+@extends('layouts.app')
+
+@section('title', 'Default Layout')
+
+@push('style')
+<!-- CSS Libraries -->
+@endpush
+
+@section('main')
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+            <h1>Management Roles</h1>
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                <div class="breadcrumb-item"><a href="#">Kebijakan</a></div>
+                <div class="breadcrumb-item">Roles</div>
+            </div>
+        </div>
+
+        <div class="section-body">
+            <h2 class="section-title">Halaman Create</h2>
+            <p class="section-lead">Di halaman ini, kita dapat menambahkan role pada posisi yang baru.</p>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Tambah Roles Baru</h4>
+
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                </div>
+
+                <div class="card-body">
+                {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Posisi</strong>
+                            {!! Form::text('name', null, array('placeholder' => 'Masukkan Posisi...','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Pilih Tugas:</strong>
+                            <br />
+                            @foreach($permission as $value)
+                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                                {{ $value->name }}</label>
+                            <br />
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <a class="btn btn-primary" href="{{ route('roles.index') }}">Kembali</a>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+                {!! Form::close() !!}
+                </div>
+
+                <div class="card-footer bg-whitesmoke">
+                    BPS - Kota Malang
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 @endsection
+
+@push('scripts')
+<!-- JS Libraies -->
+
+<!-- Page Specific JS File -->
+@endpush

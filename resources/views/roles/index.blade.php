@@ -27,17 +27,17 @@
                 </div>
                 <div class="col-lg-12 margin-tb">
                     @can('role-create')
-                    <a class="btn btn-success" href="{{ route('roles.create') }}">Buat Role Baru</a>
+                    <a class="btn btn-success" href="{{ route('roles.create') }}">Buat Role Baru</a><br>
                     @endcan
                 </div>
 
+                <br>
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <p>{{ $message }}</p>
                 </div>
                 @endif
 
-                <br>
                 <table class="table table-bordered">
                     <tr style="text-align: center">
                         <th>No</th>

@@ -1,40 +1,3 @@
-{{-- @extends('layouts.app')
-
-
-@section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2> Show Role</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Name:</strong>
-            {{ $role->name }}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Permissions:</strong>
-            @if(!empty($rolePermissions))
-                @foreach($rolePermissions as $v)
-                    <label class="label label-success">{{ $v->name }},</label>
-                @endforeach
-            @endif
-        </div>
-    </div>
-</div>
-@endsection --}}
-
-
 @extends('layouts.app')
 
 @section('title', 'Default Layout')
@@ -57,10 +20,10 @@
 
         <div class="section-body">
             <h2 class="section-title">Halaman Show</h2>
-            <p class="section-lead">Di halaman ini, admin menambahkan inputan data pengguna.</p>
+            <p class="section-lead">Di halaman ini, kita dapat melihat informasi sebuah roles.</p>
             <div class="card">
                 <div class="card-header">
-                    <h4>Lihat Info User</h4>
+                    <h4>Lihat Info Roles</h4>
                 </div>
 
                 <div class="row">
@@ -71,7 +34,7 @@
                                     <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
                                     <div class="alert-body">
                                         <div class="alert-title">Info</div>
-                                        Informasi Pribadi User.
+                                        Informasi Permission dari Posisi.
                                     </div>
                                 </div>
 

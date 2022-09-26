@@ -46,8 +46,9 @@ class RoleController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
         $permission = Permission::get();
-        return view('roles.create',compact('permission'));
+        return view('roles.create',compact('permission'), ['user' => $user, 'type_menu' => 'layout']);
     }
     
     /**
@@ -67,7 +68,7 @@ class RoleController extends Controller
         $role->syncPermissions($request->input('permission'));
     
         return redirect()->route('roles.index')
-                        ->with('success','Role created successfully');
+                        ->with('success','Data Role Berhasil Ditambahkan');
     }
     /**
      * Display the specified resource.
@@ -124,7 +125,7 @@ class RoleController extends Controller
         $role->syncPermissions($request->input('permission'));
     
         return redirect()->route('roles.index')
-                        ->with('success','Role updated successfully');
+                        ->with('success','Data Role Berhasil Diupdate');
     }
     /**
      * Remove the specified resource from storage.
@@ -136,6 +137,6 @@ class RoleController extends Controller
     {
         DB::table("roles")->where('id',$id)->delete();
         return redirect()->route('roles.index')
-                        ->with('success','Role deleted successfully');
+                        ->with('success','Data Role Berhasil Dihapus');
     }
 }
