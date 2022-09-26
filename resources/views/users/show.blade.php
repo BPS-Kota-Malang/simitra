@@ -23,7 +23,7 @@
             <p class="section-lead">Di halaman ini, admin menambahkan inputan data pengguna.</p>
             <div class="card">
                 <div class="card-header">
-                    <h4>Tambah User Baru</h4>
+                    <h4>Lihat Info User</h4>
                 </div>
 
                 <div class="row">

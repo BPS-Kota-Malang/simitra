@@ -66,7 +66,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-                        ->with('success','Data Pengguna berhasil ditambahkan');
+                        ->with('success','Data User berhasil ditambahkan');
     }
     
     /**
@@ -93,7 +93,7 @@ class UserController extends Controller
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
     
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('users.edit',compact('user','roles','userRole'), ['type_menu' => 'layout']);
     }
     
     /**
@@ -126,7 +126,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-                        ->with('success','Data Pengguna berhasil diupdate');
+                        ->with('success','Data User berhasil diupdate');
     }
     
     /**
@@ -139,6 +139,6 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','Data Pengguna berhasil dihapus');
+                        ->with('success','Data User berhasil dihapus');
     }
 }
