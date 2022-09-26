@@ -8,16 +8,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
 
-// Layout
-Route::get('/layout-default-layout', function () {
-    return view('pages.layout-default-layout', ['type_menu' => 'layout']);
-});
-
-// Blank Page
-Route::get('/blank-page', function () {
-    return view('pages.blank-page', ['type_menu' => '']);
-});
-
 // Bootstrap
 Route::get('/bootstrap-alert', function () {
     return view('pages.bootstrap-alert', ['type_menu' => 'bootstrap']);
@@ -230,10 +220,6 @@ Route::get('/utilities-subscribe', function () {
     return view('pages.utilities-subscribe', ['type_menu' => 'utilities']);
 });
 
-// credits
-Route::get('/credits', function () {
-    return view('pages.credits', ['type_menu' => '']);
-});
 
 // Dipakai
 Auth::routes();

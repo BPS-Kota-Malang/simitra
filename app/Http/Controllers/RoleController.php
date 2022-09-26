@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use DB;
+use Auth;
     
 class RoleController extends Controller
 {
@@ -31,8 +33,9 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
+        $user = Auth::user();
         $roles = Role::orderBy('id','DESC')->paginate(5);
-        return view('roles.index',compact('roles'))
+        return view('roles.index',compact('roles'), ['user' => $user, 'type_menu' => 'layout'])
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     

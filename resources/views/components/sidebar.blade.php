@@ -32,9 +32,9 @@
                         <a class="nav-link"
                             href="{{ route('users.index') }}">User</a>
                     </li>
-                    <li class="{{ Request::is('transparent-sidebar') ? 'active' : '' }}">
+                    <li class="{{ Request::is('roles.index') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('transparent-sidebar') }}">Roles</a>
+                            href="{{ route('roles.index') }}">Roles</a>
                     </li>
                     <li class="{{ Request::is('layout-top-navigation') ? 'active' : '' }}">
                         <a class="nav-link"
