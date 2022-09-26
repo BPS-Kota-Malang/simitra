@@ -22,23 +22,23 @@
                     </li>
                 </ul>
             </li>
-            <li class="menu-header">Starter</li>
+            <li class="menu-header">Management</li>
             <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
                 <a href="#"
                     class="nav-link has-dropdown"
-                    data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
+                    data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kebijakan</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('layout-default-layout') ? 'active' : '' }}">
+                    <li class="{{ Request::is('users') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('layout-default-layout') }}">Default Layout</a>
+                            href="{{ url('users') }}">User</a>
                     </li>
                     <li class="{{ Request::is('transparent-sidebar') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('transparent-sidebar') }}">Transparent Sidebar</a>
+                            href="{{ url('transparent-sidebar') }}">Roles</a>
                     </li>
                     <li class="{{ Request::is('layout-top-navigation') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('layout-top-navigation') }}">Top Navigation</a>
+                            href="{{ url('layout-top-navigation') }}">Product</a>
                     </li>
                 </ul>
             </li>

@@ -235,10 +235,6 @@ Route::get('/credits', function () {
     return view('pages.credits', ['type_menu' => '']);
 });
 
-
-
-
-
 // Dipakai
 Auth::routes();
 Route::redirect('/', '/login');

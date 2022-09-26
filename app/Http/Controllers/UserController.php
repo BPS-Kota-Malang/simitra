@@ -9,9 +9,16 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+use Auth;
     
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +26,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $user = Auth::user();
         $data = User::orderBy('id','DESC')->paginate(5);
-        return view('users.index',compact('data'))
+        return view('users.index', compact('data'), ['user' => $user, 'type_menu' => 'layout'])
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     
@@ -57,7 +65,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+                        ->with('success','Data Pengguna berhasil ditambahkan');
     }
     
     /**
@@ -117,7 +125,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success','Data Pengguna berhasil diupdate');
     }
     
     /**
@@ -130,6 +138,6 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('success','Data Pengguna berhasil dihapus');
     }
 }
