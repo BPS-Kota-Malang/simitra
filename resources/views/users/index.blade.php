@@ -20,10 +20,10 @@
 
     <div class="section-body">
       <h2 class="section-title">Halaman User</h2>
-      <p class="section-lead">Di halaman ini, admin menambahkan data pengguna.</p>
+      <p class="section-lead">Di halaman ini, kita dapat melihat data pengguna.</p>
       <div class="card">
         <div class="card-header">
-          <h4 style="text-align: justify">Data User</h4>
+          <h4>Data User</h4>
         </div>
         <div class="col-lg-12 margin-tb">
           <a class="btn btn-success" href="{{ route('users.create') }}">Tambah User</a>

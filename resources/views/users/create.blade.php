@@ -20,7 +20,7 @@
 
     <div class="section-body">
       <h2 class="section-title">Halaman Create</h2>
-      <p class="section-lead">Di halaman ini, admin menambahkan inputan data pengguna.</p>
+      <p class="section-lead">Di halaman ini, kita dapat menambahkan inputan data pengguna.</p>
       <div class="card">
         <div class="card-header">
           <h4>Tambah User Baru</h4>
