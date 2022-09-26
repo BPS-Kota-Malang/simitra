@@ -39,8 +39,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
         $roles = Role::pluck('name','name')->all();
-        return view('users.create',compact('roles'));
+        return view('users.create',compact('roles'), ['user' => $user, 'type_menu' => 'layout']);
     }
     
     /**

@@ -28,9 +28,9 @@
                     class="nav-link has-dropdown"
                     data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kebijakan</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('users') ? 'active' : '' }}">
+                    <li class="{{ Request::is('users.index') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('users') }}">User</a>
+                            href="{{ route('users.index') }}">User</a>
                     </li>
                     <li class="{{ Request::is('transparent-sidebar') ? 'active' : '' }}">
                         <a class="nav-link"
