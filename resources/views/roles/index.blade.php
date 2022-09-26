@@ -13,8 +13,8 @@
             <h1>Management Role</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Layout</a></div>
-                <div class="breadcrumb-item">Management Role</div>
+                <div class="breadcrumb-item"><a href="#">Kebijakan</a></div>
+                <div class="breadcrumb-item">Roles</div>
             </div>
         </div>
 
@@ -23,7 +23,7 @@
             <p class="section-lead">Di halaman ini, kita dapat melihat role pengguna.</p>
             <div class="card">
                 <div class="card-header">
-                    <h4>Data User</h4>
+                    <h4>Data Roles</h4>
                 </div>
                 <div class="col-lg-12 margin-tb">
                     @can('role-create')
@@ -41,7 +41,7 @@
                 <table class="table table-bordered">
                     <tr style="text-align: center">
                         <th>No</th>
-                        <th>Name</th>
+                        <th>Posisi</th>
                         <th width="280px">Aksi</th>
                     </tr>
                     @foreach ($roles as $key => $role)
