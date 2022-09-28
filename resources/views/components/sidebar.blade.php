@@ -36,9 +36,9 @@
                         <a class="nav-link"
                             href="{{ route('roles.index') }}">Roles</a>
                     </li>
-                    <li class="{{ Request::is('layout-top-navigation') ? 'active' : '' }}">
+                    <li class="{{ Request::is('products.index') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('layout-top-navigation') }}">Product</a>
+                            href="{{ route('products.index') }}">Product</a>
                     </li>
                 </ul>
             </li>
