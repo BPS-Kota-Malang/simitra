@@ -72,7 +72,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show',compact('product'));
+        $user = Auth::user();
+        return view('products.show',compact('product'), ['user' => $user, 'type_menu' => 'layout']);
     }
     
     /**
