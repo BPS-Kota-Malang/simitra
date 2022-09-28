@@ -38,7 +38,7 @@
                     </li>
                     <li class="{{ Request::is('products.index') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ route('products.index') }}">Product</a>
+                            href="{{ route('products.index') }}">Postingan</a>
                     </li>
                 </ul>
             </li>
