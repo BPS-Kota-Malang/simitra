@@ -41,7 +41,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $user = Auth::user();
+        return view('products.create', ['user' => $user, 'type_menu' => 'layout']);
     }
     
     /**
@@ -60,7 +61,7 @@ class ProductController extends Controller
         Product::create($request->all());
     
         return redirect()->route('products.index')
-                        ->with('success','Product created successfully.');
+                        ->with('success','Data Postingan Berhasil Dibuat');
     }
     
     /**
@@ -102,7 +103,7 @@ class ProductController extends Controller
         $product->update($request->all());
     
         return redirect()->route('products.index')
-                        ->with('success','Product updated successfully');
+                        ->with('success','Data Postingan Berhasil Diupdate');
     }
     
     /**
@@ -116,6 +117,6 @@ class ProductController extends Controller
         $product->delete();
     
         return redirect()->route('products.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Data Postingan Berhasil Dihapus');
     }
 }

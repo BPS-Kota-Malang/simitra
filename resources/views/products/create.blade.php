@@ -20,49 +20,44 @@
 
         <div class="section-body">
             <h2 class="section-title">Halaman Create</h2>
-            <p class="section-lead">Di halaman ini, kita dapat menambahkan role pada posisi yang baru.</p>
+            <p class="section-lead">Di halaman ini, kita dapat membuat postingan tentang kegiatan/informasi penting BPS.</p>
             <div class="card">
                 <div class="card-header">
-                    <h4>Tambah Roles Baru</h4>
-
-                    @if (count($errors) > 0)
+                    <h4>Tambah Detail Kegiatan Baru</h4>
+                    @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
                         <ul>
                             @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                                <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
-                    @endif
+                @endif
                 </div>
 
                 <div class="card-body">
-                {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Posisi</strong>
-                            {!! Form::text('name', null, array('placeholder' => 'Masukkan Posisi...','class' => 'form-control')) !!}
+                    <form action="{{ route('products.store') }}" method="POST">
+                        @csrf
+                         <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Nama:</strong>
+                                    <input type="text" name="name" class="form-control" placeholder="Silahkan masukkan nama kegiatan....">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Detail Kegiatan:</strong>
+                                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Silahkan masukkan detail kegiatan..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                <a class="btn btn-primary" href="{{ route('products.index') }}">Kembali</a>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Pilih Tugas:</strong>
-                            <br />
-                            @foreach($permission as $value)
-                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                                {{ $value->name }}</label>
-                            <br />
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <a class="btn btn-primary" href="{{ route('roles.index') }}">Kembali</a>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                </div>
-                {!! Form::close() !!}
+                    </form>
                 </div>
 
                 <div class="card-footer bg-whitesmoke">
