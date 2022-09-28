@@ -84,7 +84,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit',compact('product'));
+        $user = Auth::user();
+        return view('products.edit',compact('product'), ['user' => $user, 'type_menu' => 'layout']);
     }
     
     /**
