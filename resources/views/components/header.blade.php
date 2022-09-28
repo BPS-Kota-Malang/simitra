@@ -23,17 +23,17 @@
                     Histories
                 </div>
                 <div class="search-item">
-                    <a href="#">How to hack NASA using CSS</a>
+                    <a href="#">Cara mendaftarkan diri pada kegiatan survei.</a>
                     <a href="#"
                         class="search-close"><i class="fas fa-times"></i></a>
                 </div>
                 <div class="search-item">
-                    <a href="#">Kodinger.com</a>
+                    <a href="#">Melihat hasil seleksi mitra.</a>
                     <a href="#"
                         class="search-close"><i class="fas fa-times"></i></a>
                 </div>
                 <div class="search-item">
-                    <a href="">#Stisla</a>
+                    <a href="">Tata cara menggunakan aplikasi simitra.</a>
                     <a href="#"
                         class="search-close"><i class="fas fa-times"></i></a>
                 </div>
@@ -46,7 +46,7 @@
                             width="30"
                             src="{{ asset('img/products/product-3-50.png') }}"
                             alt="product">
-                        oPhone S9 Limited Edition
+                        Buat Akun Baru
                     </a>
                 </div>
                 <div class="search-item">
@@ -55,7 +55,7 @@
                             width="30"
                             src="{{ asset('img/products/product-2-50.png') }}"
                             alt="product">
-                        Drone X2 New Gen-7
+                        Lihat Web Resmi BPS
                     </a>
                 </div>
                 <div class="search-item">
@@ -64,7 +64,7 @@
                             width="30"
                             src="{{ asset('img/products/product-1-50.png') }}"
                             alt="product">
-                        Headphone Blitz
+                        Informasi Survei
                     </a>
                 </div>
                 <div class="search-header">
@@ -75,7 +75,7 @@
                         <div class="search-icon bg-danger mr-3 text-white">
                             <i class="fas fa-code"></i>
                         </div>
-                        Stisla Admin Template
+                        Tata syarat dan ketentuan menjadi mitra
                     </a>
                 </div>
                 <div class="search-item">
@@ -83,7 +83,7 @@
                         <div class="search-icon bg-primary mr-3 text-white">
                             <i class="fas fa-laptop"></i>
                         </div>
-                        Create a new Homepage Design
+                        Tata cara melakukan survei di BPS - Kota Malang
                     </a>
                 </div>
             </div>
@@ -94,9 +94,9 @@
                 data-toggle="dropdown"
                 class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                <div class="dropdown-header">Messages
+                <div class="dropdown-header">Pesan
                     <div class="float-right">
-                        <a href="#">Mark All As Read</a>
+                        <a href="#">Baca Semua Pesan</a>
                     </div>
                 </div>
                 <div class="dropdown-list-content dropdown-list-message">
@@ -110,7 +110,7 @@
                         </div>
                         <div class="dropdown-item-desc">
                             <b>Kusnaedi</b>
-                            <p>Hello, Bro!</p>
+                            <p>Hallo, Bro!</p>
                             <div class="time">10 Hours Ago</div>
                         </div>
                     </a>
@@ -123,7 +123,7 @@
                         </div>
                         <div class="dropdown-item-desc">
                             <b>Dedik Sugiharto</b>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                            <p>Bagaimana cara mengikuti seleksi mitra di BPS - Malang?</p>
                             <div class="time">12 Hours Ago</div>
                         </div>
                     </a>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="dropdown-item-desc">
                             <b>Agung Ardiansyah</b>
-                            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Apa saja syarat yang harus dipenuhi untuk menjadi mitra BPS Malang?</p>
                             <div class="time">12 Hours Ago</div>
                         </div>
                     </a>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="dropdown-item-desc">
                             <b>Ardian Rahardiansyah</b>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
+                            <p>Dimana kita dapat melihat hasil seleksi mitra BPS Malang?</p>
                             <div class="time">16 Hours Ago</div>
                         </div>
                     </a>
@@ -163,13 +163,13 @@
                         </div>
                         <div class="dropdown-item-desc">
                             <b>Alfa Zulkarnain</b>
-                            <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                            <p>Apa saja yang harus diperhatikan saat survei berlangsung?</p>
                             <div class="time">Yesterday</div>
                         </div>
                     </a>
                 </div>
                 <div class="dropdown-footer text-center">
-                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Lihat Semua Pesan<i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </li>
@@ -177,9 +177,9 @@
                 data-toggle="dropdown"
                 class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                <div class="dropdown-header">Notifications
+                <div class="dropdown-header">Notifikasi
                     <div class="float-right">
-                        <a href="#">Mark All As Read</a>
+                        <a href="#">Baca Semua Pesan</a>
                     </div>
                 </div>
                 <div class="dropdown-list-content dropdown-list-icons">
@@ -189,7 +189,7 @@
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="dropdown-item-desc">
-                            Template update is available now!
+                            Tata syarat dan ketentuan menjadi mitra BPS
                             <div class="time text-primary">2 Min Ago</div>
                         </div>
                     </a>
@@ -199,7 +199,7 @@
                             <i class="far fa-user"></i>
                         </div>
                         <div class="dropdown-item-desc">
-                            <b>You</b> and <b>Dedik Sugiharto</b> are now friends
+                            Lihat pendaftar calon mitra BPS Kota Malang
                             <div class="time">10 Hours Ago</div>
                         </div>
                     </a>
@@ -209,7 +209,7 @@
                             <i class="fas fa-check"></i>
                         </div>
                         <div class="dropdown-item-desc">
-                            <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
+                            Lihat hasil seleksi calon mitra BPS Kota Malang
                             <div class="time">12 Hours Ago</div>
                         </div>
                     </a>
@@ -219,7 +219,7 @@
                             <i class="fas fa-exclamation-triangle"></i>
                         </div>
                         <div class="dropdown-item-desc">
-                            Low disk space. Let's clean it!
+                            Peraturan dan tata tertib yang harus dipatuhi mitra
                             <div class="time">17 Hours Ago</div>
                         </div>
                     </a>
@@ -229,13 +229,13 @@
                             <i class="fas fa-bell"></i>
                         </div>
                         <div class="dropdown-item-desc">
-                            Welcome to Stisla template!
+                            Selamat Datang Di Aplikasi Mitra BPS Kota Malang
                             <div class="time">Yesterday</div>
                         </div>
                     </a>
                 </div>
                 <div class="dropdown-footer text-center">
-                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Lihat Semua<i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </li>
