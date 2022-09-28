@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Default Layout')
+@section('title', 'Roles-Edit')
 
 @push('style')
 <!-- CSS Libraries -->

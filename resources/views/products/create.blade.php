@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Default Layout')
+@section('title', 'Post-Create')
 
 @push('style')
 <!-- CSS Libraries -->

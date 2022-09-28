@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Default Layout')
+@section('title', 'User-Show')
 
 @push('style')
 <!-- CSS Libraries -->
