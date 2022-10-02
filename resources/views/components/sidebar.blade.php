@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href={{ route('home') }}>SIMITRA</a>
+            <a href="{{ route('home') }}">SIMITRA</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('home') }}">ST</a>
@@ -12,7 +12,7 @@
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
-                    <li class='{{ Request::is('general_dashboard') ? 'active' : '' }}'> 
+                    <li class="{{ Request::is('general_dashboard') ? 'active' : '' }}"> 
                         <a class="nav-link"
                             href="{{ route('general_dashboard') }}">General Dashboard</a>
                     </li>
@@ -22,11 +22,162 @@
                     </li>
                 </ul>
             </li>
+
+
+            <li class="menu-header">Informasi</li>
+            <li class="nav-item dropdown {{ $type_menu === 'components' ? 'active' : '' }}">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                    <span>Rekrutmen</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ Request::is('components-article') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-article') }}">Article</a>
+                    </li>
+                    <li class="{{ Request::is('components-avatar') ? 'active' : '' }}">
+                        <a class="nav-link beep beep-sidebar"
+                            href="{{ url('components-avatar') }}">Avatar</a>
+                    </li>
+                    <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-chat-box') }}">Chat Box</a>
+                    </li>
+                    <li class="{{ Request::is('components-empty-state') ? 'active' : '' }}">
+                        <a class="nav-link beep beep-sidebar"
+                            href="{{ url('components-empty-state') }}">Empty State</a>
+                    </li>
+                    <li class="{{ Request::is('components-gallery') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-gallery') }}">Gallery</a>
+                    </li>
+                    <li class="{{ Request::is('components-hero') ? 'active' : '' }}">
+                        <a class="nav-link beep beep-sidebar"
+                            href="{{ url('components-hero') }}">Hero</a>
+                    </li>
+                    <li class="{{ Request::is('components-multiple-upload') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-multiple-upload') }}">Multiple Upload</a>
+                    </li>
+                    <li class="{{ Request::is('components-pricing') ? 'active' : '' }}">
+                        <a class="nav-link beep beep-sidebar"
+                            href="{{ url('components-pricing') }}">Pricing</a>
+                    </li>
+                    <li class="{{ Request::is('components-statistic') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-statistic') }}">Statistic</a>
+                    </li>
+                    <li class="{{ Request::is('components-tab') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-tab') }}">Tab</a>
+                    </li>
+                    <li class="{{ Request::is('components-table') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-table') }}">Table</a>
+                    </li>
+                    <li class="{{ Request::is('components-user') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('components-user') }}">User</a>
+                    </li>
+                    <li class="{{ Request::is('components-wizard') ? 'active' : '' }}">
+                        <a class="nav-link beep beep-sidebar"
+                            href="{{ url('components-wizard') }}">Wizard</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li class="nav-item dropdown {{ $type_menu === 'forms' ? 'active' : '' }}">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ Request::is('forms-advanced-form') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('forms-advanced-form') }}">Advanced Form</a>
+                    </li>
+                    <li class="{{ Request::is('forms-editor') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('forms-editor') }}">Editor</a>
+                    </li>
+                    <li class="{{ Request::is('forms-validation') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('forms-validation') }}">Validation</a>
+                    </li>
+                </ul>
+            </li> -->
+            <!-- <li class="nav-item dropdown">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Google
+                        Maps</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
+                    <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
+                    <li><a href="gmaps-geocoding.html">Geocoding</a></li>
+                    <li><a href="gmaps-geolocation.html">Geolocation</a></li>
+                    <li><a href="gmaps-marker.html">Marker</a></li>
+                    <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
+                    <li><a href="gmaps-route.html">Route</a></li>
+                    <li><a href="gmaps-simple.html">Simple</a></li>
+                </ul>
+            </li> -->
+            <!-- <li class="nav-item dropdown {{ $type_menu === 'modules' ? 'active' : '' }}">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modules</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ Request::is('modules-calendar') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-calendar') }}">Calendar</a>
+                    </li>
+                    <li class="{{ Request::is('modules-chartjs') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-chartjs') }}">ChartJS</a>
+                    </li>
+                    <li class="{{ Request::is('modules-datatables') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-datatables') }}">DataTables</a>
+                    </li>
+                    <li class="{{ Request::is('modules-flag') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-flag') }}">Flag</a>
+                    </li>
+                    <li class="{{ Request::is('modules-font-awesome') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-font-awesome') }}">Font Awesome</a>
+                    </li>
+                    <li class="{{ Request::is('modules-ion-icons') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-ion-icons') }}">Ion Icons</a>
+                    </li>
+                    <li class="{{ Request::is('modules-owl-carousel') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-owl-carousel') }}">Owl Carousel</a>
+                    </li>
+                    <li class="{{ Request::is('modules-sparkline') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-sparkline') }}">Sparkline</a>
+                    </li>
+                    <li class="{{ Request::is('modules-sweet-alert') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-sweet-alert') }}">Sweet Alert</a>
+                    </li>
+                    <li class="{{ Request::is('modules-toastr') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-toastr') }}">Toastr</a>
+                    </li>
+                    <li class="{{ Request::is('modules-vector-map') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-vector-map') }}">Vector Map</a>
+                    </li>
+                    <li class="{{ Request::is('modules-weather-icon') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('modules-weather-icon') }}">Weather Icon</a>
+                    </li>
+                </ul>
+            </li> -->
+
+
             <li class="menu-header">Management</li>
             <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
                 <a href="#"
                     class="nav-link has-dropdown"
-                    data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kebijakan</span></a>
+                    data-toggle="dropdown"><i class="fas fa-users"></i> <span>Kebijakan</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('users.index') ? 'active' : '' }}">
                         <a class="nav-link"
@@ -36,19 +187,15 @@
                         <a class="nav-link"
                             href="{{ route('roles.index') }}">Roles</a>
                     </li>
-                    <li class="{{ Request::is('products.index') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ route('products.index') }}">Postingan</a>
-                    </li>
                 </ul>
             </li>
-            {{-- <li class="{{ Request::is('blank-page') ? 'active' : '' }}">
+            <li class="{{ Request::is('products.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                    href="{{ url('blank-page') }}"><i class="far fa-square"></i> <span>Blank Page</span></a>
-            </li> --}}
-            {{-- <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
+                    href="{{ route('products.index') }}"><i class="fas fa-pencil-ruler"></i> <span>Postingan</span></a>
+            </li>
+            <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
+                <!-- <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a> -->
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('bootstrap-alert') ? 'active' : '' }}">
                         <a class="nav-link"
@@ -132,155 +279,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="menu-header">Stisla</li>
-            <li class="nav-item dropdown {{ $type_menu === 'components' ? 'active' : '' }}">
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
-                    <span>Components</span></a>
-                <ul class="dropdown-menu">
-                    <li class="{{ Request::is('components-article') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-article') }}">Article</a>
-                    </li>
-                    <li class="{{ Request::is('components-avatar') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-avatar') }}">Avatar</a>
-                    </li>
-                    <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-chat-box') }}">Chat Box</a>
-                    </li>
-                    <li class="{{ Request::is('components-empty-state') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-empty-state') }}">Empty State</a>
-                    </li>
-                    <li class="{{ Request::is('components-gallery') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-gallery') }}">Gallery</a>
-                    </li>
-                    <li class="{{ Request::is('components-hero') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-hero') }}">Hero</a>
-                    </li>
-                    <li class="{{ Request::is('components-multiple-upload') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-multiple-upload') }}">Multiple Upload</a>
-                    </li>
-                    <li class="{{ Request::is('components-pricing') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-pricing') }}">Pricing</a>
-                    </li>
-                    <li class="{{ Request::is('components-statistic') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-statistic') }}">Statistic</a>
-                    </li>
-                    <li class="{{ Request::is('components-tab') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-tab') }}">Tab</a>
-                    </li>
-                    <li class="{{ Request::is('components-table') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-table') }}">Table</a>
-                    </li>
-                    <li class="{{ Request::is('components-user') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('components-user') }}">User</a>
-                    </li>
-                    <li class="{{ Request::is('components-wizard') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-wizard') }}">Wizard</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown {{ $type_menu === 'forms' ? 'active' : '' }}">
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                <ul class="dropdown-menu">
-                    <li class="{{ Request::is('forms-advanced-form') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('forms-advanced-form') }}">Advanced Form</a>
-                    </li>
-                    <li class="{{ Request::is('forms-editor') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('forms-editor') }}">Editor</a>
-                    </li>
-                    <li class="{{ Request::is('forms-validation') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('forms-validation') }}">Validation</a>
-                    </li>
-                </ul>
-            </li> --}}
-            {{-- <li class="nav-item dropdown">
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Google
-                        Maps</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                    <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                    <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                    <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                    <li><a href="gmaps-marker.html">Marker</a></li>
-                    <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                    <li><a href="gmaps-route.html">Route</a></li>
-                    <li><a href="gmaps-simple.html">Simple</a></li>
-                </ul>
-            </li> --}}
-            {{-- <li class="nav-item dropdown {{ $type_menu === 'modules' ? 'active' : '' }}">
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modules</span></a>
-                <ul class="dropdown-menu">
-                    <li class="{{ Request::is('modules-calendar') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-calendar') }}">Calendar</a>
-                    </li>
-                    <li class="{{ Request::is('modules-chartjs') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-chartjs') }}">ChartJS</a>
-                    </li>
-                    <li class="{{ Request::is('modules-datatables') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-datatables') }}">DataTables</a>
-                    </li>
-                    <li class="{{ Request::is('modules-flag') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-flag') }}">Flag</a>
-                    </li>
-                    <li class="{{ Request::is('modules-font-awesome') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-font-awesome') }}">Font Awesome</a>
-                    </li>
-                    <li class="{{ Request::is('modules-ion-icons') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-ion-icons') }}">Ion Icons</a>
-                    </li>
-                    <li class="{{ Request::is('modules-owl-carousel') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-owl-carousel') }}">Owl Carousel</a>
-                    </li>
-                    <li class="{{ Request::is('modules-sparkline') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-sparkline') }}">Sparkline</a>
-                    </li>
-                    <li class="{{ Request::is('modules-sweet-alert') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-sweet-alert') }}">Sweet Alert</a>
-                    </li>
-                    <li class="{{ Request::is('modules-toastr') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-toastr') }}">Toastr</a>
-                    </li>
-                    <li class="{{ Request::is('modules-vector-map') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-vector-map') }}">Vector Map</a>
-                    </li>
-                    <li class="{{ Request::is('modules-weather-icon') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('modules-weather-icon') }}">Weather Icon</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-header">Pages</li>
-            <li class="nav-item dropdown {{ $type_menu === 'auth' ? 'active' : '' }}">
+           
+
+            <!-- <li class="menu-header">Pages</li> -->
+            <!-- <li class="nav-item dropdown {{ $type_menu === 'auth' ? 'active' : '' }}">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
                 <ul class="dropdown-menu">
@@ -358,31 +360,8 @@
                             href="{{ url('features-tickets') }}">Tickets</a>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-item dropdown {{ $type_menu === 'utilities' ? 'active' : '' }}">
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i>
-                    <span>Utilities</span></a>
-                <ul class="dropdown-menu">
-                    <li class="{{ Request::is('utilities-contact') ? 'active' : '' }}">
-                        <a href="{{ url('utilities-contact') }}">Contact</a>
-                    </li>
-                    <li class="{{ Request::is('utilities-invoice') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('utilities-invoice') }}">Invoice</a>
-                    </li>
-                    <li class="{{ Request::is('utilities-subscribe') ? 'active' : '' }}">
-                        <a href="{{ url('utilities-subscribe') }}">Subscribe</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="{{ Request::is('credits') ? 'active' : '' }}">
-                <a class="nav-link"
-                    href="{{ url('credits') }}"><i class="fas fa-pencil-ruler">
-                    </i> <span>Credits</span>
-                </a>
-            </li>
-        </ul> --}}
+            </li> -->
+        </ul>
 
         <div class="hide-sidebar-mini mt-4 mb-4 p-3">
             <a href="https://malangkota.bps.go.id"

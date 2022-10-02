@@ -41,7 +41,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Detail Kegiatan</th>
-                        <th width="280px">Action</th>
+                        <th width="280px">Aksi</th>
                     </tr>
                     @foreach ($products as $product)
                     <tr>

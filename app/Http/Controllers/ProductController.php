@@ -30,7 +30,7 @@ class ProductController extends Controller
     {
         $user = Auth::user();
         $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'),['user' => $user, 'type_menu' => 'layout'])
+        return view('products.index',compact('products'),['user' => $user, 'type_menu' => ''])
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -42,7 +42,7 @@ class ProductController extends Controller
     public function create()
     {
         $user = Auth::user();
-        return view('products.create', ['user' => $user, 'type_menu' => 'layout']);
+        return view('products.create', ['user' => $user, 'type_menu' => '']);
     }
     
     /**
@@ -73,7 +73,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $user = Auth::user();
-        return view('products.show',compact('product'), ['user' => $user, 'type_menu' => 'layout']);
+        return view('products.show',compact('product'), ['user' => $user, 'type_menu' => '']);
     }
     
     /**
@@ -85,7 +85,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $user = Auth::user();
-        return view('products.edit',compact('product'), ['user' => $user, 'type_menu' => 'layout']);
+        return view('products.edit',compact('product'), ['user' => $user, 'type_menu' => '']);
     }
     
     /**

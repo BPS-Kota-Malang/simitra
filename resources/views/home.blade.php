@@ -34,6 +34,7 @@
                                         Informasi Pribadi</a>
                                 </div>
                             </div>
+                            <br><marquee behavior="scroll" direction="left">Badan Pusat Statistik Kota Malang akan memberikan informasi terkait rekrutmen, seleksi dan pencalonan petugas awal dalam pelaksanaan survei, guna mendukung kebijakan pemerintah dalam rangka mewujudkan satu data untuk Indonesia. </marquee>
                         </div>
                     </div>
                 </div>
