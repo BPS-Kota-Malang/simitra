@@ -71,10 +71,6 @@ Route::get('/bootstrap-typography', function () {
 });
 
 
-// components
-Route::get('/components-article', function () {
-    return view('pages.components-article', ['type_menu' => 'components']);
-});
 Route::get('/components-avatar', function () {
     return view('pages.components-avatar', ['type_menu' => 'components']);
 });
@@ -234,6 +230,7 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 // Bagian dashboard
 Route::get('/general_dashboard', [App\Http\Controllers\DashboardController::class, 'general_dashboard'])->name('general_dashboard');
 Route::get('/survey_dashboard', [App\Http\Controllers\DashboardController::class, 'survey_dashboard'])->name('survey_dashboard');
+Route::get('/rekrutment_dashboard', [App\Http\Controllers\DashboardController::class, 'rekrutment_dashboard'])->name('rekrutment_dashboard');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);

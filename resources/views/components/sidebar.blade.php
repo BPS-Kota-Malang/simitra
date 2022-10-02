@@ -23,22 +23,21 @@
                 </ul>
             </li>
 
-
-            <li class="menu-header">Informasi</li>
+            <li class="menu-header">Rekrutment</li>
             <li class="nav-item dropdown {{ $type_menu === 'components' ? 'active' : '' }}">
                 <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
-                    <span>Rekrutmen</span></a>
+                    class="nav-link has-dropdown"><i class="fas fa-users"></i>
+                    <span>Informasi</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('components-article') ? 'active' : '' }}">
+                    <li class="{{ Request::is('rekrutment_dashboard') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('components-article') }}">Article</a>
+                            href="{{ route('rekrutment_dashboard') }}">Dashboard</a>
                     </li>
-                    <li class="{{ Request::is('components-avatar') ? 'active' : '' }}">
+                    <li class="{{ Request::is('#') ? 'active' : '' }}">
                         <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-avatar') }}">Avatar</a>
+                            href="{{ url('#') }}">Penilaian</a>
                     </li>
-                    <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
+                     <!-- <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ url('components-chat-box') }}">Chat Box</a>
                     </li>
@@ -81,7 +80,7 @@
                     <li class="{{ Request::is('components-wizard') ? 'active' : '' }}">
                         <a class="nav-link beep beep-sidebar"
                             href="{{ url('components-wizard') }}">Wizard</a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
             <!-- <li class="nav-item dropdown {{ $type_menu === 'forms' ? 'active' : '' }}">
@@ -177,7 +176,7 @@
             <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
                 <a href="#"
                     class="nav-link has-dropdown"
-                    data-toggle="dropdown"><i class="fas fa-users"></i> <span>Kebijakan</span></a>
+                    data-toggle="dropdown"><i class="fas fa-tasks"></i> <span>Kebijakan</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('users.index') ? 'active' : '' }}">
                         <a class="nav-link"

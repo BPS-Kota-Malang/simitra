@@ -25,5 +25,14 @@ class DashboardController extends Controller
         return view('dashboard.survey_dashboard',
         ['user' => $user],['type_menu' => 'dashboard']);
     }
+
+    public function rekrutment_dashboard()
+    {
+        $user = Auth::user();
+        return view('dashboard.rekrutment_dashboard',
+        ['user' => $user],['type_menu' => 'components']);
+    }
+
+
     
 }
