@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TipeDokumenController;
 
 
 // Bootstrap
@@ -227,13 +228,19 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])-
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
 
-// Bagian dashboard
+// Bagian Dashboard
 Route::get('/general_dashboard', [App\Http\Controllers\DashboardController::class, 'general_dashboard'])->name('general_dashboard');
 Route::get('/survey_dashboard', [App\Http\Controllers\DashboardController::class, 'survey_dashboard'])->name('survey_dashboard');
 Route::get('/rekrutment_dashboard', [App\Http\Controllers\DashboardController::class, 'rekrutment_dashboard'])->name('rekrutment_dashboard');
 
+// Bagian Management
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
+
+    // Bagian Dokumen Pendukung
+    Route::resource('tipe_dokumen', TipeDokumenController::class);
 });
+
+

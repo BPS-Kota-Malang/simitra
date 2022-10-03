@@ -33,11 +33,11 @@
                         <a class="nav-link"
                             href="{{ route('rekrutment_dashboard') }}">Dashboard</a>
                     </li>
-                    <li class="{{ Request::is('#') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('#') }}">Penilaian</a>
+                    <li class="{{ Request::is('tipe_dokumen.index') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ route('tipe_dokumen.index') }}">Dokumen Seleksi</a>
                     </li>
-                     <!-- <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
+                    <!-- <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ url('components-chat-box') }}">Chat Box</a>
                     </li>
