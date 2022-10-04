@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TipeDokumenController;
+use App\Http\Controllers\KecamatanController;
 
 
 // Bootstrap
@@ -241,6 +242,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     // Bagian Dokumen Pendukung
     Route::resource('tipe_dokumen', TipeDokumenController::class);
+
+    // Bagian Wilayah Kecamatan
+    Route::resource('kecamatan', KecamatanController::class); 
 });
 
 
