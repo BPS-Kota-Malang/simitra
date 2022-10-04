@@ -37,11 +37,11 @@
                         <a class="nav-link"
                             href="{{ route('tipe_dokumen.index') }}">Dokumen Seleksi</a>
                     </li>
-                    <!-- <li class="{{ Request::is('components-chat-box') ? 'active' : '' }}">
+                    <li class="{{ Request::is('kecamatan.index') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('components-chat-box') }}">Chat Box</a>
+                            href="{{ route('kecamatan.index') }}">Wilayah Rekrutment</a>
                     </li>
-                    <li class="{{ Request::is('components-empty-state') ? 'active' : '' }}">
+                    <!-- <li class="{{ Request::is('components-empty-state') ? 'active' : '' }}">
                         <a class="nav-link beep beep-sidebar"
                             href="{{ url('components-empty-state') }}">Empty State</a>
                     </li>
