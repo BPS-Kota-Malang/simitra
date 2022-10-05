@@ -17,8 +17,8 @@ class KecamatanController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = Kecamatan::paginate(10);
-        return view('kecamatan.index', compact('data'),['user' => $user, 'type_menu' => 'components']);
+        $kecamatan = Kecamatan::all();
+        return view('kecamatan.index', compact('kecamatan'),['user' => $user, 'type_menu' => 'components']);
     }
 
     /**
@@ -39,7 +39,7 @@ class KecamatanController extends Controller
      */
     public function store(KecamatanRequest $request)
     {
-        Kecamatan::create($request->only(['name']));
+        Kecamatan::create($request->only(['kecamatan_tipe','id_kecamatan']));
         return redirect()->route('kecamatan.index')->with('success', 'Data Kecamatan Berhasil Disimpan');
     }
 
@@ -63,8 +63,8 @@ class KecamatanController extends Controller
     public function edit($id)
     {
         $user = Auth::user();
-        $data = Kecamatan::findOrFail($id);
-        return view('kecamatan.edit', compact('data'), ['user' => $user, 'type_menu' => 'components']);
+        $kecamatan = Kecamatan::findOrFail($id);
+        return view('kecamatan.edit', compact('kecamatan'), ['user' => $user, 'type_menu' => 'components']);
     }
 
     /**
@@ -76,7 +76,7 @@ class KecamatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Kecamatan::findOrFail($id)->update($request->only(['name']));
+        Kecamatan::findOrFail($id)->update($request->only(['kecamatan_tipe','id_kecamatan']));
         return redirect()->route('kecamatan.index')->with('success', 'Data Kecamatan Berhasil Diupdate');
     }
 

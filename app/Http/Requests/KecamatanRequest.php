@@ -24,7 +24,7 @@ class KecamatanRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'kecamatan_tipe' => 'required'
         ];
     }
 }
