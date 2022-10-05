@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Kecamatan extends Model
 {
     use HasFactory;
+    protected $guarded=['id'];
+    protected $table = "kecamatan";
+    protected $fillable = ['kecamatan_tipe'];
 
-    protected $table = 'kecamatan';
-
-    protected $fillable = [
-        'name'
-    ];
+    public function guestSubKecamatan() {
+        return $this->hasMany(SubKecamatan::class, 'id_sub_kecamatan');
+    }
 }
