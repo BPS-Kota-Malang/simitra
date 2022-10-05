@@ -14,7 +14,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Rekrutmen</a></div>
                 <div class="breadcrumb-item"><a href="#">Informasi</a></div>
-                <div class="breadcrumb-item">Wilayah Rekrutment</div>
+                <div class="breadcrumb-item">Wilayah Kecamatan</div>
             </div>
         </div>
 
@@ -43,11 +43,11 @@
                                 <form action="{{route('kecamatan.store')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="name">Wilayah Kecamatan</label>
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                            id="name" name="name" placeholder="Masukkan wilayah kecamatan.."
-                                            value="{{ old('name')}}">
-                                        @error('name')
+                                        <label for="kecamatan_tipe">Wilayah Kecamatan</label>
+                                        <input type="text" class="form-control @error('kecamatan_tipe') is-invalid @enderror"
+                                            id="kecamatan_tipe" name="kecamatan_tipe" placeholder="Masukkan wilayah kecamatan.."
+                                            value="{{ old('kecamatan_tipe')}}">
+                                        @error('kecamatan_tipe')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
@@ -72,15 +72,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @if ($data->isEmpty())
+                                            @if ($kecamatan->isEmpty())
                                             <tr class="text-center">
                                                 <td colspan="6">Data masih kosong.</td>
                                             </tr>
                                             @else
-                                            @foreach ($data as $item)
+                                            @foreach ($kecamatan as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration}}</td>
-                                                <td>{{$item->name}}</td>
+                                                <td>{{$item->kecamatan_tipe}}</td>
                                                 <td>
                                                     <a href="{{ route('kecamatan.edit', $item->id)}}"
                                                         class="btn btn-sm btn-success"><i
