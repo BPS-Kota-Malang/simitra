@@ -39,13 +39,13 @@
                     </li>
                     <li class="{{ Request::is('kecamatan.index') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ route('kecamatan.index') }}">Wilayah Rekrutment</a>
+                            href="{{ route('kecamatan.index') }}">Wilayah Kecamatan</a>
                     </li>
-                    <!-- <li class="{{ Request::is('components-empty-state') ? 'active' : '' }}">
-                        <a class="nav-link beep beep-sidebar"
-                            href="{{ url('components-empty-state') }}">Empty State</a>
+                    <li class="{{ Request::is('sub_kecamatan.index') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ route('sub_kecamatan.index') }}">Wilayah Kelurahan</a>
                     </li>
-                    <li class="{{ Request::is('components-gallery') ? 'active' : '' }}">
+                    <!-- <li class="{{ Request::is('components-gallery') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ url('components-gallery') }}">Gallery</a>
                     </li>

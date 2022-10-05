@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TipeDokumenController;
 use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\SubKecamatanController;
 
 
 // Bootstrap
@@ -245,6 +246,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     // Bagian Wilayah Kecamatan
     Route::resource('kecamatan', KecamatanController::class); 
+
+    // Bagian Wilayah Kelurahan
+    Route::resource('sub_kecamatan', SubKecamatanController::class); 
 });
 
 

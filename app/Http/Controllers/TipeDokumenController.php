@@ -17,7 +17,7 @@ class TipeDokumenController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = TipeDokumen::paginate(10);
+        $data = TipeDokumen::all();
         return view('tipe.index', compact('data'),['user' => $user, 'type_menu' => 'components']);
     }
 
