@@ -14,7 +14,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Rekrutment</a></div>
                 <div class="breadcrumb-item"><a href="#">Informasi</a></div>
-                <div class="breadcrumb-item">Wilayah Rekrutment</div>
+                <div class="breadcrumb-item">Wilayah Kecamatan</div>
             </div>
         </div>
 
@@ -29,14 +29,14 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <form action="{{route('kecamatan.update', $data->id)}}" method="POST">
+                        <form action="{{route('kecamatan.update', $kecamatan->id)}}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="name">Wilayah Kecamatan</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                                    name="name" placeholder="Masukkan wilayah kecamatan..." value="{{ $data->name }}">
-                                @error('name')
+                                <label for="kecamatan_tipe">Wilayah Kecamatan</label>
+                                <input type="text" class="form-control @error('kecamatan_tipe') is-invalid @enderror" id="kecamatan_tipe"
+                                    name="kecamatan_tipe" placeholder="Masukkan wilayah kecamatan..." value="{{ $kecamatan->kecamatan_tipe }}">
+                                @error('kecamatan_tipe')
                                 <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
