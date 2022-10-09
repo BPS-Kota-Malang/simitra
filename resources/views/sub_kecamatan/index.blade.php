@@ -28,7 +28,7 @@
                 <div class="col-lg-12 margin-tb">
                     <a class="btn btn-success" href="{{ route('sub_kecamatan.create') }}">Tambah Data Kelurahan</a>
                 </div>
-                
+
                 <br>
                 @if (session('status'))
                 <div class="alert alert-success">
@@ -44,7 +44,7 @@
                     </tr>
                     @foreach ($sub_kecamatan as $kelurahan)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td style="text-align: center">{{ $loop->iteration }}</td>
                         <td>{{ $kelurahan->guestKecamatan->kecamatan_tipe }}</td>
                         <td>{{ $kelurahan->sub_kecamatan }}</td>
                         <td>

@@ -51,9 +51,9 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Letak Kecamatan:</strong>
-                                    <select class="form-select" name="id_kecamatan" id="id_kecamatan"
-                                        aria-label=".form-select-sm example">
-                                        <option selected disabled>Pilih Data Kecamatan</option>
+                                    <select class="form-control" name="id_kecamatan"
+                                        id="id_kecamatan" aria-label=".form-select-sm example">
+                                        <option selected disabled>Pilih Data Kecamatan...</option>
                                         @foreach ($kecamatan as $item)
                                         <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
                                         @endforeach
@@ -63,8 +63,8 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Nama Kelurahan:</strong>
-                                    <input type="text" name="sub_kecamatan" value="{{ $sub_kecamatan->sub_kecamatan }}" class="form-control"
-                                        placeholder="Silahkan Isi Data Kelurahan...">
+                                    <input type="text" name="sub_kecamatan" value="{{ $sub_kecamatan->sub_kecamatan }}"
+                                        class="form-control" placeholder="Silahkan Isi Data Kelurahan...">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

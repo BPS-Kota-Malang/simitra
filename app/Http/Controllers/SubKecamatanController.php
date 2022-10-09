@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubKecamatanRequest;
+use App\Http\Requests\KecamatanRequest;
 use App\Models\Kecamatan;
 use App\Models\SubKecamatan;
 use Auth;
@@ -14,15 +15,11 @@ class SubKecamatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function index()
     {
         $user = Auth::user();
-        $sub_kecamatan = SubKecamatan::orderBy('id','DESC')->paginate(10);
+        $sub_kecamatan = SubKecamatan::all();
         $kecamatan = Kecamatan::all();
         return view('sub_kecamatan.index',compact('sub_kecamatan','kecamatan'), ['user' => $user, 'type_menu' => 'components']);
     }
