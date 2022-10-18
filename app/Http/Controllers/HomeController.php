@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
 use Auth;
+use App\Models\Kecamatan;
+use App\Models\SubKecamatan;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
@@ -32,8 +36,34 @@ class HomeController extends Controller
     public function profile()
     {
         $user = Auth::user();
-        return view('profile',
-        ['user' => $user],['type_menu' => 'features']);
+        $kecamatan = Kecamatan::all();
+        $sub_kecamatan = SubKecamatan::all();
+        $roles = Role::pluck('name','name')->all();
+         return view('profile',compact('kecamatan','sub_kecamatan','roles'), ['user' => $user, 'type_menu' => 'layout']);
+    }
+
+    public function profileStore(ProfileRequest $request) {
+
+            // dd($request->all());
+
+            User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+            'jabatan' => $request->jabatan,
+            'agama' => $request->agama,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'kecamatan' => $request->kecamatan,
+            'kelurahan' => $request->kelurahan,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            'pgl_sensus' => implode(',', $request -> pengalaman),
+            'password' => $request->password,
+            'foto' => $request->foto,
+
+        ]);
+
+        return redirect()->route('profile')->with('status', 'Data Profile berhasil di update');
     }
 
     public function activity()
@@ -49,5 +79,5 @@ class HomeController extends Controller
         return view('settings',
         ['user' => $user],['type_menu' => 'features']);
     }
-    
+
 }
