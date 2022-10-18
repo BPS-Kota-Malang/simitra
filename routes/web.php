@@ -226,7 +226,11 @@ Route::redirect('/', '/login');
 
 // Bagian user
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Bagian Profile
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+Route::post('/profileStore', [App\Http\Controllers\HomeController::class, 'profileStore'])->name('profileStore');
+
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
 
@@ -245,10 +249,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('tipe_dokumen', TipeDokumenController::class);
 
     // Bagian Wilayah Kecamatan
-    Route::resource('kecamatan', KecamatanController::class); 
+    Route::resource('kecamatan', KecamatanController::class);
 
     // Bagian Wilayah Kelurahan
-    Route::resource('sub_kecamatan', SubKecamatanController::class); 
+    Route::resource('sub_kecamatan', SubKecamatanController::class);
 });
 
 
