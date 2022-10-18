@@ -24,7 +24,8 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('kelurahan')->nullable();
-            $table->string('rtrw')->nullable();
+            $table->string('rt')->nullable();
+            $table->string('rw')->nullable();
             $table->string('pgl_sensus')->nullable();
             $table->string('foto')->nullable();
             $table->string('password');
