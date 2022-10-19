@@ -45,8 +45,9 @@ class HomeController extends Controller
     public function profileStore(ProfileRequest $request) {
 
             // dd($request->all());
+            $user = User::find(Auth::user()->id);
 
-            User::create([
+            $user -> update([
             'name' => $request->name,
             'email' => $request->email,
             'alamat' => $request->alamat,
@@ -58,7 +59,6 @@ class HomeController extends Controller
             'rt' => $request->rt,
             'rw' => $request->rw,
             'pgl_sensus' => implode(',', $request -> pengalaman),
-            'password' => $request->password,
             'foto' => $request->foto,
 
         ]);
