@@ -9,7 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TipeDokumenController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\SubKecamatanController;
-
+use App\Http\Controllers\KelengkapanController;
 
 // Bootstrap
 Route::get('/bootstrap-alert', function () {
@@ -230,6 +230,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Bagian Profile
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 Route::post('/profileStore', [App\Http\Controllers\HomeController::class, 'profileStore'])->name('profileStore');
+// Route::get('/kelengkapan', [App\Http\Controllers\KelengkapanController::class, 'index'])->name('kelengkapan');
 
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
 Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
@@ -253,6 +254,10 @@ Route::group(['middleware' => ['auth']], function() {
 
     // Bagian Wilayah Kelurahan
     Route::resource('sub_kecamatan', SubKecamatanController::class);
+
+     // Cek Kelengkapan Dokumen
+    Route::resource('kelengkapan', KelengkapanController::class);
+    Route::get('/download-dokumen/{id}', [KelengkapanController::class, 'download'])->name('kelengkapan.download');
 });
 
 
