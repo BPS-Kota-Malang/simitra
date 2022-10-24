@@ -10,8 +10,9 @@ class TipeDokumen extends Model
     use HasFactory;
 
     protected $table = 'tipe_dokumen';
+    protected $fillable = ['name'];
 
-    protected $fillable = [
-        'name'
-    ];
+    public function guestKelengkapan() {
+        return $this->hasMany(Kelengkapan::class, 'id_kelengkapan');
+    }
 }
