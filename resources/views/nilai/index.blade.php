@@ -60,10 +60,10 @@
                                         @enderror
                                         <br>
                                         <label for="nilai">Nilai Sikap</label>
-                                        <input type="text" class="form-control @error('nilai_kualitas') is-invalid @enderror"
-                                            id="nilai_kualitas" name="nilai_kualitas" placeholder="Masukkan nilai kualitas..."
-                                            value="{{ old('nilai_kualitas')}}">
-                                        @error('nilai_kualitas')
+                                        <input type="text" class="form-control @error('nilai_sikap') is-invalid @enderror"
+                                            id="nilai_sikap" name="nilai_sikap" placeholder="Masukkan nilai sikap..."
+                                            value="{{ old('nilai_sikap')}}">
+                                        @error('nilai_sikap')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
