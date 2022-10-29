@@ -12,13 +12,17 @@
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('general_dashboard') ? 'active' : '' }}"> 
+                    <li class="{{ Request::is('general_dashboard') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ route('general_dashboard') }}">General Dashboard</a>
                     </li>
                     <li class="{{ Request::is('survey_dashboard') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ route('survey_dashboard') }}">Survey Dashboard</a>
+                    </li>
+                    <li class="{{ Request::is('nilai.index') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ route('nilai.index') }}">Nilai</a>
                     </li>
                 </ul>
             </li>
@@ -278,7 +282,7 @@
                     </li>
                 </ul>
             </li>
-           
+
 
             <!-- <li class="menu-header">Pages</li> -->
             <!-- <li class="nav-item dropdown {{ $type_menu === 'auth' ? 'active' : '' }}">
@@ -365,7 +369,7 @@
         <div class="hide-sidebar-mini mt-4 mb-4 p-3">
             <a href="https://malangkota.bps.go.id"
                 class="btn btn-primary btn-lg btn-block btn-icon-split">
-                <i class="fas fa-rocket"></i> Website Resmi - BPS 
+                <i class="fas fa-rocket"></i> Website Resmi - BPS
             </a>
         </div>
     </aside>
