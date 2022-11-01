@@ -95,9 +95,6 @@
                                     </div>
                                 </li>
                             </div>
-                            <div class="col-12 my-3 text-center">
-                                <a href="{{route('kelengkapan.index')}}" class="btn btn-sm btn-outline-primary">Cek Kelengkapan Dokumen</a>
-                            </div>
                              <div class="col-12 my-3 text-center">
                                 <a href="{{route('kelengkapan.index')}}" class="btn btn-sm btn-outline-primary">Cek Kelengkapan Dokumen</a>
                             </div>
