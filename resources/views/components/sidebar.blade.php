@@ -196,6 +196,10 @@
                 <a class="nav-link"
                     href="{{ route('products.index') }}"><i class="fas fa-pencil-ruler"></i> <span>Postingan</span></a>
             </li>
+             <li class="{{ Request::is('products.index') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="}"><i class="fa-solid fa-clipboard-list"></i> <span>Kegiatan</span></a>
+            </li>
             <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
                 <!-- <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a> -->
