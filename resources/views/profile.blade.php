@@ -41,16 +41,62 @@
                                 </div>
                             </div>
                             <div class="profile-widget-description">
-                                <div class="profile-widget-name">{{ $user->name }}<div
+                                {{-- <div class="profile-widget-name">{{ $user->name }}<div
                                         class="text-muted d-inline font-weight-normal">
                                         <div class="slash"></div> Mitra
                                     </div>
-                                </div>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a
-                                type specimen book.It has survived not only five centuries, but also the leap
-                                into electronic typesetting, remaining essentially unchanged.
+                                </div> --}}
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">Nama</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->name}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">Email</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->email}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">Jenis Kelamin</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->jenis_kelamin}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">Agama</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->agama}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">Kecamatan</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->kecamatan}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">Kelurahan</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->kelurahan}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">RT</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->rt}}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4">RW</div>
+                                        <div class="col-md-6 font-weight-bold">{{$user->rw}}</div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-12 my-3 text-center">
+                                <a href="{{route('kelengkapan.index')}}" class="btn btn-sm btn-outline-primary">Cek Kelengkapan Dokumen</a>
                             </div>
                         </div>
                     </div>
