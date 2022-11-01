@@ -36,14 +36,14 @@
                                 <div class="profile-widget-items">
                                     <div class="profile-widget-item">
                                         <div class="profile-widget-item-value">Jabatan</div>
-                                        <div class="profile-widget-item-label">Mitra</div>
+                                        <div class="profile-widget-item-label">{{ $user->jabatan }}</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="profile-widget-description">
                                 <div class="profile-widget-name">{{ $user->name }}<div
                                         class="text-muted d-inline font-weight-normal">
-                                        <div class="slash"></div> Mitra
+                                        <div class="slash"></div>{{ $user->jabatan}}
                                     </div>
                                 </div>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -51,6 +51,9 @@
                                 when an unknown printer took a galley of type and scrambled it to make a
                                 type specimen book.It has survived not only five centuries, but also the leap
                                 into electronic typesetting, remaining essentially unchanged.
+                            </div>
+                             <div class="col-12 my-3 text-center">
+                                <a href="{{route('kelengkapan.index')}}" class="btn btn-sm btn-outline-primary">Cek Kelengkapan Dokumen</a>
                             </div>
                         </div>
                     </div>
@@ -205,7 +208,7 @@
 
                                         </div>
                                     </div>
-                                     <div class="row">
+                                    {{-- <div class="row">
                                         <div class="form-group col-md-10 col-12" >
                                             <label type="hidden">Password</label>
                                             <input type="text"
@@ -216,8 +219,8 @@
                                                 required=""
                                                 placeholder="Silahkan masukkan nama anda...">
                                         </div>
-                                    </div>
-                                     <div class="row">
+                                    </div> --}}
+                                    <div class="row">
                                         <div class="form-group col-md-10 col-12">
                                             <label class="form-label" for="customFile">Foto</label>
                                             <input
