@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nilai;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 
 class NilaiController extends Controller
 {
@@ -13,11 +15,12 @@ class NilaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $data = Nilai::all();
-        return view('nilai.index', compact('data'),['user' => $user, 'type_menu' => 'components']);
+        $data = User::orderBy('id','DESC')->paginate(5);
+        return view('nilai.index', compact('data'), ['user' => $user, 'type_menu' => 'dashboard'])
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,7 +30,9 @@ class NilaiController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        $nilai = Nilai::all();
+        return view('nilai.create', compact('nilai'),['user' => $user, 'type_menu' => 'dashboard']);
     }
 
     /**
