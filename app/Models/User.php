@@ -56,4 +56,8 @@ class User extends Authenticatable
     public function guestKelengkapan() {
         return $this->hasMany(Kelengkapan::class, 'id_kelengkapan');
     }
+
+     public function guestNilai() {
+        return $this->hasMany(Nilai::class, 'id_nilai');
+    }
 }
