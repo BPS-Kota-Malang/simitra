@@ -11,6 +11,7 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\SubKecamatanController;
 use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\KegiatanController;
 
 // Bootstrap
 Route::get('/bootstrap-alert', function () {
@@ -246,6 +247,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('kegiatan', KegiatanController::class);
 
     // Bagian Dokumen Pendukung
     Route::resource('tipe_dokumen', TipeDokumenController::class);
