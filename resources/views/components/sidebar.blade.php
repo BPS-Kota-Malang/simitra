@@ -198,7 +198,11 @@
             </li>
              <li class="{{ Request::is('kegiatan.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                    href="{{ route('kegiatan.index') }}"><i class="fa-solid fa-clipboard-list"></i> <span>Kegiatan</span></a>
+                    href="{{ route('kegiatan.index') }}"><i class="fa-solid fa-calendar"></i> <span>Kegiatan</span></a>
+            </li>
+            <li class="{{ Request::is('/daftar_survei') ? 'active' : '' }}">
+            <a class="nav-link"
+                    href="/daftar_survei"><i class="fa-solid fa-clipboard-list"></i> <span>Daftar Survei</span></a>
             </li>
             <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
                 <!-- <a href="#"
