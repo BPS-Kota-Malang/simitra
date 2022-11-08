@@ -35,26 +35,48 @@
                                     <h5 class="card-title" >{{ $item->product->name }}</h5>
                                     <p class="card-text"><i class="fa-solid fa-user-tie"></i> &nbsp; Jenis : {{ $item->jenis }}</p>
                                     <p class="card-text"><i class="fa-solid fa-calendar-days"></i> &nbsp; Tanggal : {{ $item->tanggal }}</p>
-                                    <a href="#" class="btn btn-primary">Daftar</a>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCreate">Daftar</button>
                                 </div>
                                 </div>
                             </div>
                         @endforeach
                         </div>
                     </div>
-
                 <div class="card-footer bg-whitesmoke">
                     BPS - Kota Malang
                 </div>
             </div>
         </div>
     </section>
+     <!--Modal-->
+    <form action="#" method="post" enctype="multipart/form-data">{{ csrf_field() }}
+        <div class="modal fade text-left" id="ModalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{ __('Create New User') }}</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                    <strong>{{ __('Name') }}:</strong>
+                                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">{{ __('Back') }}</button>
+                            <button type="submit" class="btn btn-success">{{ __('Save') }}</button>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </form>
 </div>
 @endsection
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 @push('scripts')
 <!-- JS Libraies -->
