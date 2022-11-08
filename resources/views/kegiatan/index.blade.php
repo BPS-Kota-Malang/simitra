@@ -19,10 +19,10 @@
 
         <div class="section-body">
             <h2 class="section-title">Halaman Kegiatan</h2>
-            <p class="section-lead">Di halaman ini, mitra dapat memilih kegiatan</p>
+            <p class="section-lead">Di halaman ini, admin dapat memilih kegiatan</p>
             <div class="card">
                 <div class="card-header">
-                    <h4>DAFTAR KEGIATAN SURVEI/SENSUS</h4>
+                    <h4>KEGIATAN SURVEI/SENSUS</h4>
                 </div>
 
                 <div class="col-lg-12 margin-tb">
