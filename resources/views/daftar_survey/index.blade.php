@@ -54,7 +54,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">{{ __('Create New User') }}</h4>
+                        <h4 class="modal-title">{{ __('Daftar Sensus / Survei') }}</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                             </button>
@@ -62,13 +62,35 @@
                     <div class="modal-body">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                    <strong>{{ __('Name') }}:</strong>
-                                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                                    <strong>{{ __('Name Survei') }}:</strong>
+                                    &nbsp; <td>{{ $item->product->name}}</td>
+                            </div>
+                             <div class="form-group">
+                                    <strong>{{ __('Kegiatan') }}:</strong>
+                                    &nbsp; <td>{{ $item->jenis}}</td>
+                            </div>
+                            <div class="form-group">
+                                    <strong>Kecamatan:</strong>
+                                    <select class="custom-select my-1 mr-sm-2" name="id_products" id="id_products">
+                                        <option selected disabled>- Pilih Kecamatan -</option>
+                                        @foreach ($kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
+                                         @endforeach
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                    <strong>Kelurahan:</strong>
+                                    <select class="custom-select my-1 mr-sm-2" name="id_products" id="id_products">
+                                        <option selected disabled>- Pilih Kelurahan -</option>
+                                        @foreach ($sub_kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
+                                         @endforeach
+                                    </select>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">{{ __('Back') }}</button>
-                            <button type="submit" class="btn btn-success">{{ __('Save') }}</button>
+                            <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">{{ __('Kembali') }}</button>
+                            <button type="submit" class="btn btn-success">{{ __('Daftar') }}</button>
                         </div>
                     </div>
                 </div>
