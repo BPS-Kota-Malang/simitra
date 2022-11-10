@@ -14,8 +14,6 @@
 -   Jalankan `php artisan serve` command
 -   Done
 
-## Team Project Magang
-
 # Magang Politeknik Negeri Malang
 Bidang :  Integrasi Pengolahan dan Diseminasi Statistik (IPDS)
 
