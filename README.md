@@ -14,4 +14,25 @@
 -   Jalankan `php artisan serve` command
 -   Done
 
-## Team Project Magang
+# Magang Politeknik Negeri Malang
+Bidang :  Integrasi Pengolahan dan Diseminasi Statistik (IPDS)
+
+# Data Pembina
+
+| Data Pembina | Nama Pembina |
+|--|--|
+| Pembina I | Bima Sakti Krisdianto |
+| Pembina II | Satria Candra Wibawa |
+
+## Data Mahasiswa - Kelompok 1
+
+| NIM | Nama |
+|--|--|
+| 1941720060 | Darman Saputra Saragih |
+| 1941720189 | Mutiara Rahmanda Tri Rizkia |
+| 1941720049 | Qorina Anindhita Prameswari |
+
+## Pernyataan Kelompok
+Kami menyatakan isi tugas, kode program, dan laporan kegiatan magang dibuat oleh Kami. Kami tidak melakukan plagiasi, kecurangan, menyalin/menggandakan milik orang lain.
+
+Jika Kami melakukan plagiasi, kecurangan, atau melanggar hak kekayaan intelektual, Kami siap untuk mendapat sanksi atau hukuman sesuai peraturan perundang-undangan yang berlaku.
