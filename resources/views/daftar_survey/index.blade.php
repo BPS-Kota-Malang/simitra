@@ -27,15 +27,15 @@
 
                     <div class="container">
                         <div class="row">
-                        @foreach ($kegiatan as $item)
+                        @foreach ($products as $item)
                             <div class="col-sm-4 py-3 py-sm-0">
                                 <div class="card box-shadow">
                                 <img src="img/1.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title" >{{ $item->product->name }}</h5>
+                                    <h5 class="card-title" >{{ $item->name }}</h5>
                                     <p class="card-text"><i class="fa-solid fa-user-tie"></i> &nbsp; Jenis : {{ $item->jenis }}</p>
                                     <p class="card-text"><i class="fa-solid fa-calendar-days"></i> &nbsp; Tanggal : {{ $item->tanggal }}</p>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCreate">Daftar</button>
+                                    <button type="button" class="btn btn-primary editbtn btn-sm" data-toggle="modal" data-target="#editModal{{ $item->id_kegiatan }}">Daftar</button>
                                 </div>
                                 </div>
                             </div>
@@ -48,9 +48,11 @@
             </div>
         </div>
     </section>
-     <!--Modal-->
-    <form action="#" method="post" enctype="multipart/form-data">{{ csrf_field() }}
-        <div class="modal fade text-left" id="ModalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!--Modal-->
+    @foreach ($products as $item)
+    <form action="#" method="POST" enctype="multipart/form-data">{{ csrf_field() }}
+        <div class="modal fade text-left" id="editModal{{ $item->id_kegiatan }}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -59,19 +61,21 @@
                                     <span aria-hidden="true">&times;</span>
                             </button>
                     </div>
+
+                    <input type="hidden" name="kegiatan_id" id="kegiatan_id" />
+
                     <div class="modal-body">
+
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>{{ __('Name Survei') }}:</strong>
-                                    &nbsp; <td>{{ $item->product->name}}</td>
+                            <div class="form-group mb-3">
+                                <td type="text" name="name" id="name" required class="form-control" readonly>Nama Survei : {{ $item->name }}</td>
                             </div>
-                             <div class="form-group">
-                                    <strong>{{ __('Kegiatan') }}:</strong>
-                                    &nbsp; <td>{{ $item->jenis}}</td>
+                            <div class="form-group mb-3">
+                                <td for="" name="jenis" id="jenis"  required class="form-control" readonly>Jenis : {{ $item->jenis }} </td>
                             </div>
                             <div class="form-group">
                                     <strong>Kecamatan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" name="id_products" id="id_products">
+                                    <select class="custom-select my-1 mr-sm-2" id="kecamatan">
                                         <option selected disabled>- Pilih Kecamatan -</option>
                                         @foreach ($kecamatan as $item)
                                         <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
@@ -80,7 +84,7 @@
                             </div>
                             <div class="form-group">
                                     <strong>Kelurahan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" name="id_products" id="id_products">
+                                    <select class="custom-select my-1 mr-sm-2" id="sub_kecamatan">
                                         <option selected disabled>- Pilih Kelurahan -</option>
                                         @foreach ($sub_kecamatan as $item)
                                         <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
@@ -97,6 +101,8 @@
              </div>
         </div>
     </form>
+    @endforeach
+
 </div>
 @endsection
 
