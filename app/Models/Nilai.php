@@ -10,10 +10,26 @@ class Nilai extends Model
     use HasFactory;
 
     protected $table = 'nilai';
-    protected $fillable = ['nilai_ketepatan','nilai_kualitas','nilai_sikap','status'];
+    protected $fillable = ['id_users','id_kegiatan','id_kecamatan', 'id_sub_kecamatan',
+            'nilai_ketepatan','nilai_kualitas','nilai_sikap'];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'id_users');
+    }
+
+    public function kegiatan()
+    {
+        return $this->belongsTo(Kegiatan::class, 'id_kegiatan');
+    }
+
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class, 'id_kecamatan');
+    }
+
+    public function subkecamatan()
+    {
+        return $this->belongsTo(SubKecamatan::class, 'id_sub_kecamatan');
     }
 }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Nilai;
 use App\Models\User;
+use App\Models\Kegiatan;
+use App\Models\Kecamatan;
+use App\Models\SubKecamatan;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
@@ -18,9 +21,7 @@ class NilaiController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $data = User::orderBy('id','DESC')->paginate(5);
-        return view('nilai.index', compact('data'), ['user' => $user, 'type_menu' => 'dashboard'])
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        return view('nilai.index', ['user' => $user, 'type_menu' => 'dashboard']);
     }
 
     /**
