@@ -246,8 +246,7 @@ Route::get('/rekrutment_dashboard', [App\Http\Controllers\DashboardController::c
 
 //Bagian Daftar Survey
 Route::get('/daftar_survei', [DaftarSurveyController::class, 'daftarSurvey'])->name('daftarSurvey');
-Route::resource('daftarSurvey', DaftarSurveyController::class);
-
+Route::post('/simpan-survei', [DaftarSurveyController::class, 'saveGuest'])->name('simpan-survei');
 
 // Bagian Management
 Route::group(['middleware' => ['auth']], function() {
