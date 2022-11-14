@@ -51,7 +51,8 @@
 
     <!--Modal-->
     @foreach ($products as $item)
-    <form action="#" method="POST" enctype="multipart/form-data">{{ csrf_field() }}
+    <form action="{{ url ('/simpan-survei') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="modal fade text-left" id="editModal{{ $item->id_kegiatan }}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -62,20 +63,21 @@
                             </button>
                     </div>
 
-                    <input type="hidden" name="kegiatan_id" id="kegiatan_id" />
 
                     <div class="modal-body">
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group mb-3">
-                                <td type="text" name="name" id="name" required class="form-control" readonly>Nama Survei : {{ $item->name }}</td>
+                                <strong>Nama Survei:</strong>
+                                <input type="text" name="name" id="name" required class="form-control" value="{{ $item->name }} " readonly />
                             </div>
                             <div class="form-group mb-3">
-                                <td for="" name="jenis" id="jenis"  required class="form-control" readonly>Jenis : {{ $item->jenis }} </td>
+                                <strong>Jenis:</strong>
+                                <input for="" name="jenis" id="jenis"  required class="form-control" value="{{ $item->jenis }}" readonly />
                             </div>
                             <div class="form-group">
                                     <strong>Kecamatan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" id="kecamatan">
+                                    <select class="custom-select my-1 mr-sm-2" name="kecamatan" id="kecamatan">
                                         <option selected disabled>- Pilih Kecamatan -</option>
                                         @foreach ($kecamatan as $item)
                                         <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
@@ -84,7 +86,7 @@
                             </div>
                             <div class="form-group">
                                     <strong>Kelurahan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" id="sub_kecamatan">
+                                    <select class="custom-select my-1 mr-sm-2" name="sub_kecamatan" id="sub_kecamatan">
                                         <option selected disabled>- Pilih Kelurahan -</option>
                                         @foreach ($sub_kecamatan as $item)
                                         <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>

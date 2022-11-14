@@ -36,28 +36,30 @@
         <table class="table table-bordered">
           <tr style="text-align: center">
             <th>No</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Roles</th>
+            <th>Nama</th>
+            <th>Kegiatan</th>
+            <th>Kecamatan</th>
+            <th>Kelurahan</th>
+            <th>Nilai Ketepatan</th>
+            <th>Nilai Kualitas</th>
+            <th>Nilai Sikap</th>
             <th width="280px">Aksi</th>
           </tr>
-          @foreach ($data as $key => $user)
+          {{-- @foreach ($data as $key => $user)
           <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
-            <td>
-              @if(!empty($user->getRoleNames()))
-              @foreach($user->getRoleNames() as $v)
-              <label class="badge badge-success">{{ $v }}</label>
-              @endforeach
-              @endif
-            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
               <a class="btn btn-info" href="{{ route('nilai.create') }}">Nilai</a>
             </td>
           </tr>
-          @endforeach
+          @endforeach --}}
         </table>
 
         <div class="card-footer bg-whitesmoke">
