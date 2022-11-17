@@ -29,7 +29,7 @@ class KelengkapanController extends Controller
             return view('repository.index', compact('data', 'key'));
         }
         $data = Kelengkapan::where('user_id', Auth::user()->id)->with('user')->with('user', 'tipe')->paginate(10);
-        return view('kelengkapan.index', compact('data','user','tipe'), ['user' => $user, 'type_menu' => 'layout']);
+        return view('kelengkapan.index', compact('data','user','tipe'), ['user' => $user, 'type_menu' => '']);
     }
 
     /**
@@ -82,9 +82,10 @@ class KelengkapanController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
         $data = Kelengkapan::findOrFail($id);
         $tipe = TipeDokumen::all();
-        return view('kelengkapan.edit', compact('data', 'tipe'));
+        return view('kelengkapan.edit', compact('data', 'tipe'), ['user' => $user, 'type_menu' =>'']);
     }
 
     /**
@@ -96,6 +97,7 @@ class KelengkapanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = Auth::user();
         $payload = $request->only(['user_id', 'tipe_id']);
         $data = Kelengkapan::findOrFail($id);
         if ($request->hasFile('file')) {
