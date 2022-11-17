@@ -52,6 +52,7 @@
 /* 2. Mixin */
 /* 3. Bootstrap Override */
 /* 3.1 Misc */
+@import '~bootstrap-icons/font/bootstrap-icons';
 @import url("//fonts.googleapis.com/css?family=Nunito:400,600,700,800");
 .btn:focus,
 .btn:active,
@@ -3649,3 +3650,8 @@ body.layout-3 .main-wrapper {
     opacity: 0;
   }
 }
+
+.box-shadow{
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+}
+
