@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Nilai;
 use App\Models\User;
-use App\Models\Kegiatan;
 use App\Models\Kecamatan;
 use App\Models\SubKecamatan;
 use Illuminate\Http\Request;
@@ -21,7 +20,8 @@ class NilaiController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        return view('nilai.index', ['user' => $user, 'type_menu' => 'dashboard']);
+        $nilai = Nilai::all();
+        return view('nilai.index', compact('nilai'), ['user' => $user, 'type_menu' => 'dashboard']);
     }
 
     /**
@@ -67,7 +67,9 @@ class NilaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        $nilai = Nilai::find($id);
+        return view('nilai.edit', compact('nilai'),['user' => $user, 'type_menu' => 'dashboard']);
     }
 
     /**
@@ -79,7 +81,13 @@ class NilaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nilai= Nilai::find($id);
+        $nilai->nilai_ketepatan=$request->nilai_ketepatan;
+        $nilai->nilai_kualitas=$request->nilai_kualitas;
+        $nilai->nilai_sikap=$request->nilai_sikap;
+
+        $nilai->save();
+        return redirect()->route('nilai.index')->with('success', 'Data Nilai berhasil di Simpan');
     }
 
     /**
@@ -90,6 +98,9 @@ class NilaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nilai  = Nilai::find($id);
+        $nilai ->delete();
+        return redirect()->route('nilai.index')
+                        ->with('success','Data Nilai Berhasil Dihapus');
     }
 }

@@ -43,23 +43,28 @@
             <th>Nilai Ketepatan</th>
             <th>Nilai Kualitas</th>
             <th>Nilai Sikap</th>
-            <th width="280px">Aksi</th>
+            <th width="200px">Aksi</th>
           </tr>
-          {{-- @foreach ($data as $key => $user)
+          @foreach ($nilai as $item)
           <tr>
-            <td>{{ ++$i }}</td>
+            <td style="text-align: center">{{ $loop->iteration }}</td>
             <td>{{ $user->name }}</td>
-            <td>{{ $user->email }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <a class="btn btn-info" href="{{ route('nilai.create') }}">Nilai</a>
+            <td>{{ $item->kegiatan->product->name }}</td>
+            <td>{{ $item->kecamatan->kecamatan_tipe }}</td>
+            <td>{{ $item->subkecamatan->sub_kecamatan }}</td>
+            <td>{{ $item->nilai_ketepatan }}</td>
+            <td>{{ $item->nilai_kualitas }}</td>
+            <td >{{ $item->nilai_sikap }}</td>
+            <td >
+                <form action="{{ route('nilai.destroy',$item->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('nilai.edit',$item->id) }}">Nilai</a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </td>
           </tr>
-          @endforeach --}}
+          @endforeach
         </table>
 
         <div class="card-footer bg-whitesmoke">
