@@ -67,6 +67,9 @@
                     <div class="modal-body">
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
+
+                            <input type="hidden" name="kegiatan" value="{{ $item->id_kegiatan }}" class="form-control" >
+
                             <div class="form-group mb-3">
                                 <strong>Nama Survei:</strong>
                                 <input type="text" name="name" id="name" required class="form-control" value="{{ $item->name }} " readonly />
@@ -102,6 +105,7 @@
                 </div>
              </div>
         </div>
+        @include('sweetalert::alert')
     </form>
     @endforeach
 
