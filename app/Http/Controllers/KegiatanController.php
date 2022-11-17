@@ -20,8 +20,7 @@ class KegiatanController extends Controller
         $user = Auth::user();
         $kegiatan = Kegiatan::all();
         $products = Product::all();
-        return view('kegiatan.index',compact('kegiatan','products'),['user' => $user, 'type_menu' => ''])
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('kegiatan.index',compact('kegiatan','products'),['user' => $user, 'type_menu' => '']);
     }
 
     /**

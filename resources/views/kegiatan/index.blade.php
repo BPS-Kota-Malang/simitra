@@ -46,7 +46,7 @@
                     </tr>
                     @foreach ($kegiatan as $item)
                     <tr>
-                        <td>{{ ++$i }}</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->product->name }}</td>
                         <td>{{ $item->jenis }}</td>
                         <td>{{ $item->tanggal}}</td>
