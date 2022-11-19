@@ -69,6 +69,13 @@
                                     class="form-control" placeholder="Silahkan masukkan tanggal kegiatan....">
                                 </div>
                         </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Gaji</strong>
+                                    <input type="text" name="gaji" value="{{ $kegiatan->gaji }}"
+                                    class="form-control" placeholder="Silahkan masukkan nilai gaji....">
+                                </div>
+                        </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>

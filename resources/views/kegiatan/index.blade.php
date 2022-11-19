@@ -42,6 +42,7 @@
                         <th>Nama Kegiatan Survei</th>
                         <th>Jenis</th>
                         <th>Tanggal</th>
+                        <th>Gaji</th>
                         <th width="280px">Aksi</th>
                     </tr>
                     @foreach ($kegiatan as $item)
@@ -50,6 +51,7 @@
                         <td>{{ $item->product->name }}</td>
                         <td>{{ $item->jenis }}</td>
                         <td>{{ $item->tanggal}}</td>
+                         <td>{{ $item->gaji }}</td>
                         <td>
                             <form action="{{ route('kegiatan.destroy',$item->id) }}" method="POST">
                                 <a class="btn btn-info" href="{{ route('kegiatan.show',$item->id) }}">Show</a>
