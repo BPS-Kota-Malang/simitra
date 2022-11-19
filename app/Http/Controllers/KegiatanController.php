@@ -91,6 +91,7 @@ class KegiatanController extends Controller
         $kegiatan->id_products=$request->id_products;
         $kegiatan->jenis=$request->jenis;
         $kegiatan->tanggal=$request->tanggal;
+        $kegiatan->gaji=$request->gaji;
 
         $kegiatan->save();
         return redirect()->route('kegiatan.index')->with('success', 'Data Kegiatan Survei Berhasil Diupdate');

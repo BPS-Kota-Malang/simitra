@@ -14,7 +14,9 @@ class Kegiatan extends Model
     protected $fillable = [
         'id_products',
         'jenis',
-        'tanggal'];
+        'tanggal',
+        'gaji',
+    ];
 
     public function Product(){
         return $this->belongsTo(Product::class, 'id_products');
