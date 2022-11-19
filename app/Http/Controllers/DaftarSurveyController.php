@@ -33,7 +33,7 @@ class DaftarSurveyController extends Controller
         $user = Auth::user();
 
         $nilai = new Nilai();
-        $nilai->id_users=$request->user;
+        $nilai->id_users=$user->id;
         $nilai->id_kegiatan=$request->kegiatan;
         $nilai->id_kecamatan=$request->kecamatan;
         $nilai->id_sub_kecamatan=$request->sub_kecamatan;

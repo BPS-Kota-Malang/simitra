@@ -48,7 +48,7 @@
           @foreach ($nilai as $item)
           <tr>
             <td style="text-align: center">{{ $loop->iteration }}</td>
-            <td>{{ $user->name }}</td>
+            <td>{{ $item->user->name }}</td>
             <td>{{ $item->kegiatan->product->name }}</td>
             <td>{{ $item->kecamatan->kecamatan_tipe }}</td>
             <td>{{ $item->subkecamatan->sub_kecamatan }}</td>
