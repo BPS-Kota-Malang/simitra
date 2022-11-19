@@ -24,6 +24,10 @@
                         <a class="nav-link"
                             href="{{ route('nilai.index') }}">Nilai</a>
                     </li>
+                    <li class="{{ Request::is('pembayaran.index') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ route('pembayaran.index') }}">Pembayaran</a>
+                    </li>
                 </ul>
             </li>
 
