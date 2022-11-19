@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('id_products')->references('id')->on('products');
             $table->string('jenis');
             $table->string('tanggal');
+            $table->integer('gaji')->nullable();
             $table->timestamps();
         });
     }
