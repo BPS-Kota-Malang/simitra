@@ -11,6 +11,7 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\SubKecamatanController;
 use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\DaftarSurveyController;
 
@@ -254,6 +255,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
     Route::resource('nilai', NilaiController::class);
+    Route::resource('pembayaran', PembayaranController::class);
     Route::resource('kegiatan', KegiatanController::class);
 
     // Bagian Dokumen Pendukung
