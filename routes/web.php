@@ -256,6 +256,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products', ProductController::class);
     Route::resource('nilai', NilaiController::class);
     Route::resource('pembayaran', PembayaranController::class);
+    Route::get('change-status/{id}', [PembayaranController::class,'changeStatus']);
     Route::resource('kegiatan', KegiatanController::class);
 
     // Bagian Dokumen Pendukung

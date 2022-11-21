@@ -8,6 +8,7 @@ use App\Models\SubKecamatan;
 use App\Models\Kecamatan;
 use App\Models\Product;
 use App\Models\Nilai;
+use App\Models\Pembayaran;
 use Auth;
 use Alert;
 use App\Models\User;
@@ -21,7 +22,7 @@ class DaftarSurveyController extends Controller
         $sub_kecamatan = SubKecamatan::all();
         $kecamatan = Kecamatan::all();
         $products = Kegiatan::join('products','kegiatan.id_products','=','products.id')
-            ->select('kegiatan.id as id_kegiatan','products.name as name' , 'kegiatan.jenis as jenis' , 'kegiatan.tanggal as tanggal')
+            ->select('kegiatan.id as id_kegiatan','products.name as name' , 'kegiatan.jenis as jenis' , 'kegiatan.gaji as gaji' , 'kegiatan.tanggal as tanggal')
             ->get();
 
         return view('daftar_survey.index', compact('sub_kecamatan','kecamatan','products'),['user' => $user, 'type_menu' => '']);
@@ -38,6 +39,13 @@ class DaftarSurveyController extends Controller
         $nilai->id_kecamatan=$request->kecamatan;
         $nilai->id_sub_kecamatan=$request->sub_kecamatan;
         $nilai->save();
+
+        $pembayaran = new Pembayaran();
+        $pembayaran->id_users=$user->id;
+        $pembayaran->id_kegiatan=$request->kegiatan;
+        $pembayaran->id_kecamatan=$request->kecamatan;
+        $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
+        $pembayaran->save();
 
         Alert::success("Success", "Pendaftaran Berhasil");
         return redirect('/daftar_survei');
