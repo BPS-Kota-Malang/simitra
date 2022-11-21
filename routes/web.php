@@ -249,6 +249,9 @@ Route::get('/rekrutment_dashboard', [App\Http\Controllers\DashboardController::c
 Route::get('/daftar_survei', [DaftarSurveyController::class, 'daftarSurvey'])->name('daftarSurvey');
 Route::post('/simpan-survei', [DaftarSurveyController::class, 'saveGuest'])->name('simpan-survei');
 
+//history
+Route::get('/history', [HistoryController::class, 'history'])->name('history');
+
 // Bagian Management
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
