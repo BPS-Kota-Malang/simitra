@@ -14,6 +14,7 @@ use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\DaftarSurveyController;
+use App\Http\Controllers\HistoryController;
 
 // Bootstrap
 Route::get('/bootstrap-alert', function () {
