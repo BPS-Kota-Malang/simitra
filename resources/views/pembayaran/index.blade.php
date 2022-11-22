@@ -38,18 +38,17 @@
         </div>
         @endif
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" height="300px">
           <tr style="text-align: center">
             <th>No</th>
             <th>Nama</th>
-            <th>Survei yang Diikuti</th>
-            <th>Jenis Survei</th>
-            <th>Kecamatan</th>
-            <th>Kelurahan</th>
+            <th width="150px">Survei yang Diikuti</th>
+            <th width="20px">Jenis Survei</th>
+            <th width="20px">Kecamatan</th>
+            <th width="20px">Kelurahan</th>
             <th>Gaji</th>
-            <th>Tanggal</th>
             <th>Status Pembayaran</th>
-            <th width="200px">Aksi</th>
+            <th width="290px">Aksi</th>
           </tr>
 
           @foreach ($pembayaran as $item)
@@ -61,7 +60,6 @@
             <td>{{ $item->kecamatan->kecamatan_tipe }}</td>
             <td>{{ $item->subkecamatan->sub_kecamatan }}</td>
             <td>{{ $item->kegiatan->gaji }}</td>
-            <td>{{ $item->created_at }}</td>
             <td>
                 @if($item->status==1)
                     <a href="{{ url('change-status/'.$item->id) }}"
@@ -75,6 +73,8 @@
             </td>
             <td >
                 <form action="{{ route('pembayaran.destroy',$item->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('pembayaran.show',$item->id) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('pembayaran.edit',$item->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
