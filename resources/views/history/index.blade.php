@@ -27,14 +27,25 @@
 
                     <div class="container">
                         <div class="row">
-                        @foreach ($products as $item)
+                        @foreach ($pembayaran as $item)
                             <div class="col-sm-4 py-3 py-sm-0">
                                 <div class="card box-shadow">
                                 <img src="img/1.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title" >{{ $item->name }}</h5>
-                                    <p class="card-text"><i class="fa-solid fa-user-tie"></i> &nbsp; Jenis : {{ $item->jenis }}</p>
-                                    <p class="card-text"><i class="fa-solid fa-calendar-days"></i> &nbsp; Tanggal : {{ $item->tanggal }}</p>
+                                    <h5 class="card-title" >{{ $item->kegiatan->product->name }}</h5>
+                                    <p class="card-text"><i class="fa-solid fa-user-tie"></i> &nbsp; Jenis : {{ $item->kegiatan->jenis }}</p>
+                                    <p class="card-text"><i class="fa-solid fa-user-tie"></i></i> &nbsp; Status :
+                                        @if($item->status==1)
+                                            <a href="{{ url('change-status/'.$item->id) }}"
+                                                onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                                class="btn btn-sm btn-success">Sudah dibayar</a>
+                                        @else
+                                            <a href="{{ url('change-status/'.$item->id) }}"
+                                                onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                                class="btn btn-sm btn-danger">Belum dibayar</a>
+                                        @endif
+                                    
+                                    </p>
                                 </div>
                                 </div>
                             </div>
