@@ -98,6 +98,9 @@
                              <div class="col-12 my-3 text-center">
                                 <a href="{{route('kelengkapan.index')}}" class="btn btn-sm btn-outline-primary">Cek Kelengkapan Dokumen</a>
                             </div>
+                            <div class="col-12 my-3 text-center">
+                                <a href="{{route('history')}}" class="btn btn-sm btn-outline-primary">History Kegiatan</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-7">

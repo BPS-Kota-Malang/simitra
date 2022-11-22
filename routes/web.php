@@ -14,6 +14,7 @@ use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\DaftarSurveyController;
+use App\Http\Controllers\HistoryController;
 
 // Bootstrap
 Route::get('/bootstrap-alert', function () {
@@ -248,6 +249,9 @@ Route::get('/rekrutment_dashboard', [App\Http\Controllers\DashboardController::c
 //Bagian Daftar Survey
 Route::get('/daftar_survei', [DaftarSurveyController::class, 'daftarSurvey'])->name('daftarSurvey');
 Route::post('/simpan-survei', [DaftarSurveyController::class, 'saveGuest'])->name('simpan-survei');
+
+//history
+Route::get('/history', [HistoryController::class, 'history'])->name('history');
 
 // Bagian Management
 Route::group(['middleware' => ['auth']], function() {
