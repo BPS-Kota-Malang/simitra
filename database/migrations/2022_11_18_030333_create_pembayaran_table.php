@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreign('id_kecamatan')->references('id')->on('kecamatan');
             $table->unsignedBigInteger('id_sub_kecamatan');
             $table->foreign('id_sub_kecamatan')->references('id')->on('sub_kecamatan');
-            $table->string('gaji')->nullable();
+            $table->integer('gaji')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
