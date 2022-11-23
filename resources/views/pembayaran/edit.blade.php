@@ -43,48 +43,31 @@
                     @csrf
                     @method('PUT')
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>Nama Mitra:</strong>
-                                    <input type="text" name="id" value="{{ $pembayaran->user->name }}"
-                                    class="form-control" >
+                        @if($pembayaran->kegiatan->jenis_mitra=='Honor')
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                        <strong>Gaji:</strong>
+                                        <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
+                                        class="form-control" >
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>Survei yang diikuti:</strong>
-                                    <input type="text" name="name" value="{{ $pembayaran->kegiatan->product->name }}"
-                                    class="form-control" >
+                         @elseif($pembayaran->kegiatan->jenis_mitra=='Bulanan')
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                        <strong>Gaji:</strong>
+                                        <input type="text" name="gaji" value="{{ $pembayaran->kegiatan->gaji  }}"
+                                        class="form-control" readonly >
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>Jenis Survei:</strong>
-                                    <input type="text" name="jenis" value="{{ $pembayaran->kegiatan->jenis }}"
-                                    class="form-control" >
+                        @else
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                        <strong>Gaji:</strong>
+                                        <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
+                                        class="form-control"  >
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>Kecamatan:</strong>
-                                    <input type="text" name="kecamatan_tipe" value="{{ $pembayaran->kecamatan->kecamatan_tipe }}"
-                                    class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>Kelurahan:</strong>
-                                    <input type="text" name="sub_kecamatan" value="{{ $pembayaran->subkecamatan->sub_kecamatan }}"
-                                    class="form-control" >
-                            </div>
-                        </div>
-                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                    <strong>Gaji:</strong>
-                                    <input type="text" name="gaji" value="{{ $pembayaran->kegiatan->gaji  }}"
-                                    class="form-control" >
-                            </div>
-                        </div>
+                        @endif
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                             <button type="submit" class="btn btn-success">Submit</button>

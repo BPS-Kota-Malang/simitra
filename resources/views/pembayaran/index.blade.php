@@ -38,7 +38,7 @@
         </div>
         @endif
 
-        <table class="table table-bordered" height="300px">
+        <table class="table table-bordered">
           <tr style="text-align: center">
             <th>No</th>
             <th>Nama</th>
@@ -47,6 +47,7 @@
             <th width="20px">Kecamatan</th>
             <th width="20px">Kelurahan</th>
             <th>Gaji</th>
+            <th>Jenis Mitra</th>
             <th>Status Pembayaran</th>
             <th width="290px">Aksi</th>
           </tr>
@@ -59,7 +60,16 @@
             <td>{{ $item->kegiatan->jenis }}</td>
             <td>{{ $item->kecamatan->kecamatan_tipe }}</td>
             <td>{{ $item->subkecamatan->sub_kecamatan }}</td>
-            <td>{{ $item->kegiatan->gaji }}</td>
+            <td>
+                @if($item->kegiatan->jenis_mitra=='Honor')
+                    {{  $item->gaji }}
+                @elseif($item->kegiatan->jenis_mitra=='Bulanan')
+                    {{  $item->kegiatan->gaji }}
+                @else
+                    {{ $item->gaji }}
+                @endif
+            </td>
+            <td>{{ $item->kegiatan->jenis_mitra }}</td>
             <td>
                 @if($item->status==1)
                     <a href="{{ url('change-status/'.$item->id) }}"
