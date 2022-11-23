@@ -42,14 +42,14 @@
           <tr style="text-align: center">
             <th>No</th>
             <th>Nama</th>
-            <th width="150px">Survei yang Diikuti</th>
-            <th width="20px">Jenis Survei</th>
-            <th width="20px">Kecamatan</th>
-            <th width="20px">Kelurahan</th>
+            <th >Survei yang Diikuti</th>
+            <th>Jenis Survei</th>
+            <th >Kecamatan</th>
+            <th >Kelurahan</th>
             <th>Gaji</th>
             <th>Jenis Mitra</th>
-            <th>Status Pembayaran</th>
-            <th width="290px">Aksi</th>
+            <th >Status Pembayaran</th>
+            <th width="200px">Aksi</th>
           </tr>
 
           @foreach ($pembayaran as $item)
@@ -87,6 +87,7 @@
                     <a class="btn btn-primary" href="{{ route('pembayaran.edit',$item->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
+                    <br><br>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>

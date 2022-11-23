@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SubKecamatan;
+use App\Models\Kecamatan;
 use App\Models\Pembayaran;
 use Auth;
 
@@ -36,8 +38,10 @@ class PembayaranController extends Controller
     public function edit($id)
     {
         $user = Auth::user();
+        $sub_kecamatan = SubKecamatan::all();
+        $kecamatan = Kecamatan::all();
         $pembayaran = Pembayaran::find($id);
-        return view('pembayaran.edit', compact('pembayaran'),['user' => $user, 'type_menu' => 'dashboard']);
+        return view('pembayaran.edit', compact('pembayaran','kecamatan','sub_kecamatan'),['user' => $user, 'type_menu' => 'dashboard']);
     }
 
     /**
@@ -49,11 +53,14 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pembayaran= Pembayaran::find($id);
+        // dd($request->all());
+        $pembayaran= Pembayaran::with('kecamatan')->find($id);
         $pembayaran->gaji=$request->gaji;
+        $pembayaran->id_kecamatan=$request->id_kecamatan;
+        $pembayaran->id_sub_kecamatan=$request->id_sub_kecamatan;
         $pembayaran->save();
 
-        return redirect()->route('pembayaran.index')->with('success', 'Data Pembayaran berhasil di Simpan');
+        return redirect()->route('pembayaran.index')->with('success', 'Data Pembayaran berhasil di Update');
     }
 
     /**

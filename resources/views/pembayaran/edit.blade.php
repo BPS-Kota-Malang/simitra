@@ -51,6 +51,24 @@
                                         class="form-control" >
                                 </div>
                             </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <strong>Kecamatan:</strong>
+                                    <select class="custom-select my-1 mr-sm-2" name="id_kecamatan" id="id_kecamatan">
+                                        <option selected disabled>Pilih Kecamatan</option>
+                                        @foreach ($kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
+                                        @endforeach
+                                    </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <strong>Kelurahan:</strong>
+                                    <select class="custom-select my-1 mr-sm-2" name="id_sub_kecamatan" id="id_sub_kecamatan">
+                                        <option selected disabled>Pilih Kelurahan</option>
+                                        @foreach ($sub_kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
+                                        @endforeach
+                                    </select>
+                            </div>
                          @elseif($pembayaran->kegiatan->jenis_mitra=='Bulanan')
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -59,12 +77,30 @@
                                         class="form-control" readonly >
                                 </div>
                             </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <strong>Kecamatan:</strong>
+                                    <select class="custom-select my-1 mr-sm-2" name="id_kecamatan" id="id_kecamatan">
+                                        <option selected disabled>Pilih Kecamatan</option>
+                                        @foreach ($kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
+                                        @endforeach
+                                    </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <strong>Kelurahan:</strong>
+                                    <select class="custom-select my-1 mr-sm-2" name="id_sub_kecamatan" id="id_sub_kecamatan">
+                                        <option selected disabled>Pilih Kelurahan</option>
+                                        @foreach ($sub_kecamatan as $item)
+                                        <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
+                                        @endforeach
+                                    </select>
+                            </div>
                         @else
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                         <strong>Gaji:</strong>
                                         <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
-                                        class="form-control"  >
+                                        class="form-control">
                                 </div>
                             </div>
                         @endif
