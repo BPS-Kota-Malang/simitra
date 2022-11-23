@@ -69,6 +69,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
 
                             <input type="hidden" name="kegiatan" value="{{ $item->id_kegiatan }}" class="form-control" >
+                            <input type="hidden" name="gaji" value="{{ $item->gaji }}" class="form-control" >
 
                             <div class="form-group mb-3">
                                 <strong>Nama Survei:</strong>
