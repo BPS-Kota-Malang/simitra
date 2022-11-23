@@ -24,10 +24,10 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total Admin</h4>
+                                <h4>Survei</h4>
                             </div>
                             <div class="card-body">
-                                10
+                                {{ $kegiatan }}
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Berita</h4>
+                                <h4>Gaji</h4>
                             </div>
                             <div class="card-body">
                                 42
@@ -47,37 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1 border">
-                        <div class="card-icon bg-warning">
-                            <i class="far fa-file"></i>
-                        </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Survei</h4>
-                            </div>
-                            <div class="card-body">
-                                1,201
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1 border">
-                        <div class="card-icon bg-success">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Total Mitra</h4>
-                            </div>
-                            <div class="card-body">
-                                47
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+               
 
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-12 col-sm-12">

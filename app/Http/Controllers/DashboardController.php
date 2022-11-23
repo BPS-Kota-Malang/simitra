@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Kegiatan;
 
 class DashboardController extends Controller
 {
@@ -15,8 +16,10 @@ class DashboardController extends Controller
     public function general_dashboard()
     {
         $user = Auth::user();
-        return view('dashboard.general_dashboard',
-        ['user' => $user],['type_menu' => 'dashboard']);
+        $kegiatan = Kegiatan::count();
+        // return view('dashboard.general_dashboard','kegiatan',
+        // ['user' => $user],['type_menu' => 'dashboard']);
+        return view('dashboard.general_dashboard', compact('kegiatan'),['user' => $user,'type_menu' => 'dashboard']);
     }
 
     public function survey_dashboard()
@@ -36,3 +39,4 @@ class DashboardController extends Controller
 
     
 }
+
