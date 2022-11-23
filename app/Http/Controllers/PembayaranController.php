@@ -50,14 +50,10 @@ class PembayaranController extends Controller
     public function update(Request $request, $id)
     {
         $pembayaran= Pembayaran::find($id);
-        // $pembayaran->id_users=$user->id;
-        $pembayaran->id_kegiatan=$request->kegiatan;
-        $pembayaran->id_kecamatan=$request->kecamatan;
         $pembayaran->gaji=$request->gaji;
         $pembayaran->save();
 
-        $pembayaran->save();
-        return redirect()->route('pembayaran.index')->with('success', 'Data Pembayaarn berhasil di Simpan');
+        return redirect()->route('pembayaran.index')->with('success', 'Data Pembayaran berhasil di Simpan');
     }
 
     /**
