@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('jenis');
             $table->string('tanggal');
             $table->integer('gaji')->nullable();
+            $table->string('jenis_mitra')->nullable();
             $table->timestamps();
         });
     }
