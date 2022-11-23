@@ -22,7 +22,8 @@ class DaftarSurveyController extends Controller
         $sub_kecamatan = SubKecamatan::all();
         $kecamatan = Kecamatan::all();
         $products = Kegiatan::join('products','kegiatan.id_products','=','products.id')
-            ->select('kegiatan.id as id_kegiatan','products.name as name' , 'kegiatan.jenis as jenis' , 'kegiatan.gaji as gaji' , 'kegiatan.tanggal as tanggal')
+            ->select('kegiatan.id as id_kegiatan','products.name as name' , 'kegiatan.jenis as jenis' , 'kegiatan.gaji as gaji' ,
+            'kegiatan.jenis_mitra as jenis_mitra','kegiatan.tanggal as tanggal')
             ->get();
 
         return view('daftar_survey.index', compact('sub_kecamatan','kecamatan','products'),['user' => $user, 'type_menu' => '']);
@@ -45,6 +46,7 @@ class DaftarSurveyController extends Controller
         $pembayaran->id_kegiatan=$request->kegiatan;
         $pembayaran->id_kecamatan=$request->kecamatan;
         $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
+        $pembayaran->gaji=$request->gaji;
         $pembayaran->save();
 
         Alert::success("Success", "Pendaftaran Berhasil");
