@@ -7,7 +7,6 @@ use Auth;
 use App\Models\Product;
 use App\Models\Pendaftar;
 
-
 class PendaftarController extends Controller
 {
     /**
@@ -53,7 +52,9 @@ class PendaftarController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Auth::user();
+        $pendaftar = Pendaftar::all();
+        return view('pendaftar.show', compact('pendaftar'),['user' => $user, 'type_menu' => '']);
     }
 
     /**
@@ -64,7 +65,7 @@ class PendaftarController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -76,7 +77,7 @@ class PendaftarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -88,5 +89,17 @@ class PendaftarController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function changeStatus($id){
+        $getStatus = Pendaftar::select('status')->where('id',$id)->first()  ;
+        if($getStatus->status==1){
+            $status = 0;
+        }else{
+            $status = 1;
+        }
+        Pendaftar::where('id',$id)->update(['status'=>$status]);
+        return redirect()->route('pendaftar.show',$id)->with('status', 'Status berhasil diubah');
+        return $getStatus;
     }
 }
