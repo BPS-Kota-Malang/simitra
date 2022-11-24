@@ -9,6 +9,7 @@ use App\Models\Kecamatan;
 use App\Models\Product;
 use App\Models\Nilai;
 use App\Models\Pembayaran;
+use App\Models\Pendaftar;
 use Auth;
 use Alert;
 use App\Models\User;
@@ -48,6 +49,11 @@ class DaftarSurveyController extends Controller
         $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
         $pembayaran->gaji=$request->gaji;
         $pembayaran->save();
+
+        $pendaftar = new Pendaftar();
+        $pendaftar->id_users=$user->id;
+        $pendaftar->id_kegiatan=$request->kegiatan;
+        $pendaftar->save();
 
         Alert::success("Success", "Pendaftaran Berhasil");
         return redirect('/daftar_survei');
