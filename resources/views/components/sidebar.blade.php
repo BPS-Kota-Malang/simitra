@@ -208,9 +208,9 @@
                 <a class="nav-link"
                     href="{{ route('pembayaran.index') }}"><i class="fa-solid fa-money-bill"></i><span>Pembayaran</span></a>
             </li>
-            <li class="{{ Request::is('') ? 'active' : '' }}">
+            <li class="{{ Request::is('pendaftar.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                    href=""><i class="fa-solid fa-id-card"></i><span>Pendaftar</span></a>
+                    href="{{ route('pendaftar.index') }}"><i class="fa-solid fa-id-card"></i><span>Pendaftar</span></a>
             </li>
             <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
                 <!-- <a href="#"
