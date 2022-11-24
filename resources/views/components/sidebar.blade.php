@@ -20,14 +20,6 @@
                         <a class="nav-link"
                             href="{{ route('survey_dashboard') }}">Survey Dashboard</a>
                     </li>
-                    <li class="{{ Request::is('nilai.index') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ route('nilai.index') }}">Nilai</a>
-                    </li>
-                    <li class="{{ Request::is('pembayaran.index') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ route('pembayaran.index') }}">Pembayaran</a>
-                    </li>
                 </ul>
             </li>
 
@@ -207,6 +199,18 @@
             <li class="{{ Request::is('/daftar_survei') ? 'active' : '' }}">
             <a class="nav-link"
                     href="/daftar_survei"><i class="fa-solid fa-clipboard-list"></i> <span>Daftar Survei</span></a>
+            </li>
+            <li class="{{ Request::is('nilai.index') ? 'active' : '' }}">
+                <a class="nav-link"
+                     href="{{ route('nilai.index') }}"><i class="fa-solid fa-pen-to-square"></i><span>Nilai</span></a>
+            </li>
+            <li class="{{ Request::is('pembayaran.index') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('pembayaran.index') }}"><i class="fa-solid fa-money-bill"></i><span>Pembayaran</span></a>
+            </li>
+            <li class="{{ Request::is('') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href=""><i class="fa-solid fa-id-card"></i><span>Pendaftar</span></a>
             </li>
             <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
                 <!-- <a href="#"
