@@ -15,6 +15,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\DaftarSurveyController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\PendaftarController;
 
 // Bootstrap
 Route::get('/bootstrap-alert', function () {
@@ -262,6 +263,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('pembayaran', PembayaranController::class);
     Route::get('change-status/{id}', [PembayaranController::class,'changeStatus']);
     Route::resource('kegiatan', KegiatanController::class);
+    Route::resource('pendaftar', PendaftarController::class);
 
     // Bagian Dokumen Pendukung
     Route::resource('tipe_dokumen', TipeDokumenController::class);
