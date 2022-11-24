@@ -47,6 +47,7 @@
             <th >Kecamatan</th>
             <th >Kelurahan</th>
             <th>Gaji</th>
+            <th>Total Gaji</th>
             <th>Jenis Mitra</th>
             <th >Status Pembayaran</th>
             <th width="200px">Aksi</th>
@@ -69,6 +70,8 @@
                     {{ $item->gaji }}
                 @endif
             </td>
+            <td>{{ $item->total_gaji }}</td>
+            
             <td>{{ $item->kegiatan->jenis_mitra }}</td>
             <td>
                 @if($item->status==1)
