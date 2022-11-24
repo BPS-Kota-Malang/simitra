@@ -35,7 +35,7 @@
                 <div class="col-md-7" style="max-width: 500px;">
                     <div class="card-body" >
                         <h3 class="card-title">{{ $item->name }}</h3>
-                        <a class="btn btn-primary" href="{{ route('pendaftar.edit',$item->id) }}"
+                        <a class="btn btn-primary" href="{{ route('pendaftar.show',$item->id) }}"
                              style="margin-top: 70px">Pendaftar</a>
                     </div>
                 </div>
