@@ -16,6 +16,7 @@ class Kegiatan extends Model
         'jenis',
         'tanggal',
         'gaji',
+        'jenis_mitra',
     ];
 
     public function Product(){
