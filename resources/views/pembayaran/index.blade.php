@@ -42,15 +42,13 @@
           <tr style="text-align: center">
             <th>No</th>
             <th>Nama</th>
-            <th >Survei yang Diikuti</th>
+            <th width="300px">Survei yang Diikuti</th>
             <th>Jenis Survei</th>
-            <th >Kecamatan</th>
-            <th >Kelurahan</th>
             <th>Gaji</th>
             <th>Total Gaji</th>
             <th>Jenis Mitra</th>
             <th >Status Pembayaran</th>
-            <th width="200px">Aksi</th>
+            <th width="300px">Aksi</th>
           </tr>
 
           @foreach ($pembayaran as $item)
@@ -59,8 +57,6 @@
             <td>{{ $item->user->name }}</td>
             <td>{{ $item->kegiatan->product->name }}</td>
             <td>{{ $item->kegiatan->jenis }}</td>
-            <td>{{ $item->kecamatan->kecamatan_tipe }}</td>
-            <td>{{ $item->subkecamatan->sub_kecamatan }}</td>
             <td>
                 @if($item->kegiatan->jenis_mitra=='Honor')
                     {{  $item->gaji }}
@@ -71,7 +67,7 @@
                 @endif
             </td>
             <td>{{ $item->total_gaji }}</td>
-            
+
             <td>{{ $item->kegiatan->jenis_mitra }}</td>
             <td>
                 @if($item->status==1)
@@ -90,7 +86,6 @@
                     <a class="btn btn-primary" href="{{ route('pembayaran.edit',$item->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
-                    <br><br>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
