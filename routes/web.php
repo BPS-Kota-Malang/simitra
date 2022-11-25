@@ -262,6 +262,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('nilai', NilaiController::class);
     Route::resource('pembayaran', PembayaranController::class);
     Route::get('change-status/{id}', [PembayaranController::class,'changeStatus']);
+    Route::get('total_gaji', [PembayaranController::class, 'getTotalGaji']);
     Route::resource('kegiatan', KegiatanController::class);
     Route::resource('pendaftar', PendaftarController::class);
     Route::get('change-status/{id}', [PendaftarController::class,'changeStatus']);

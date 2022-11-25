@@ -24,7 +24,6 @@ return new class extends Migration
             $table->unsignedBigInteger('id_sub_kecamatan');
             $table->foreign('id_sub_kecamatan')->references('id')->on('sub_kecamatan');
             $table->integer('gaji')->nullable();
-            $table->integer('total_gaji')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

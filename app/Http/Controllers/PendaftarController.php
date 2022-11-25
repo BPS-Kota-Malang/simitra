@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Kegiatan;
 use App\Models\Pendaftar;
+use DB;
 
 class PendaftarController extends Controller
 {
@@ -19,6 +20,15 @@ class PendaftarController extends Controller
         $user = Auth::user();
         $kegiatan = Kegiatan::all();
         $pendaftar = Pendaftar::all();
+
+        $gaji = DB::table('pembayaran')
+                ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji')
+                ->groupBy('id_users')
+                ->get();
+
+        $data = [];
+        $data.name;
+        
         return view('pendaftar.index',compact('kegiatan','pendaftar'), ['user' => $user, 'type_menu' => '']);
 
     }

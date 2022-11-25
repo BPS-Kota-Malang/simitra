@@ -41,7 +41,6 @@
             <th>No</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Total Gaji</th>
             <th>Roles</th>
             <th width="280px">Aksi</th>
           </tr>
@@ -50,7 +49,6 @@
             <td>{{ ++$i }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ $user->total_gaji }}</td>
             <td>
               @if(!empty($user->getRoleNames()))
               @foreach($user->getRoleNames() as $v)
@@ -68,9 +66,9 @@
           </tr>
           @endforeach
         </table>
-        
+
         {!! $data->render() !!}
-        
+
         <div class="card-footer bg-whitesmoke">
           BPS - Kota Malang
         </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\SubKecamatan;
 use App\Models\Kecamatan;
 use App\Models\Pembayaran;
+use Illuminate\Support\Facades\DB;
 use Auth;
 
 class PembayaranController extends Controller
@@ -32,6 +33,9 @@ class PembayaranController extends Controller
     {
         $user = Auth::user();
         $pembayaran = Pembayaran::find($id);
+
+        
+
         return view('pembayaran.show', compact('pembayaran'),['user' => $user, 'type_menu' => '']);
     }
 
@@ -87,5 +91,21 @@ class PembayaranController extends Controller
         Pembayaran::where('id',$id)->update(['status'=>$status]);
         return redirect()->route('pembayaran.index')->with('status', 'Status berhasil diubah');
         return $getStatus;
+    }
+
+    public function getTotalGaji(){
+         /**
+         *  Get Total Gaji for every fucking user
+         */
+        // $gaji = Pembayaran::where('id_users', 1)->sum('gaji');
+        // dd($gaji);
+
+
+
+        $gaji = DB::table('pembayaran')
+                ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji')
+                ->groupBy('id_users')
+                ->get();
+        dd($gaji);
     }
 }

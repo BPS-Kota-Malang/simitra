@@ -43,8 +43,8 @@
                         <th>No</th>
                         <th>Tanggal</th>
                         <th>Nama</th>
-                        <th >Survei yang Diikuti</th>
-                        <th>Jenis Survei</th>
+                        <th>Kegiatan</th>
+                        <th>Total Gaji</th>
                         <th >Status Pendaftar</th>
                     </tr>
 

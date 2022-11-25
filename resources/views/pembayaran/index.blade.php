@@ -30,6 +30,9 @@
         <div class="card-header">
           <h4>Data Pembayaran</h4>
         </div>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search"
+            aria-describedby="basic-addon2">
 
         <br>
         @if ($message = Session::get('success'))
@@ -38,14 +41,13 @@
         </div>
         @endif
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="myTable">
           <tr style="text-align: center">
             <th>No</th>
             <th>Nama</th>
             <th width="300px">Survei yang Diikuti</th>
             <th>Jenis Survei</th>
             <th>Gaji</th>
-            <th>Total Gaji</th>
             <th>Jenis Mitra</th>
             <th >Status Pembayaran</th>
             <th width="300px">Aksi</th>
@@ -66,8 +68,6 @@
                     {{ $item->gaji }}
                 @endif
             </td>
-            <td>{{ $item->total_gaji }}</td>
-
             <td>{{ $item->kegiatan->jenis_mitra }}</td>
             <td>
                 @if($item->status==1)
@@ -104,7 +104,14 @@
 @endsection
 
 @push('scripts')
-<!-- JS Libraies -->
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#myTable').DataTable({
+            dom: 'Bfrtip'
+        });
+    })
+
+</script>
 
 <!-- Page Specific JS File -->
 @endpush
