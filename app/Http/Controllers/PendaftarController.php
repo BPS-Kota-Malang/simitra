@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\Product;
+use App\Models\Kegiatan;
 use App\Models\Pendaftar;
 
 class PendaftarController extends Controller
@@ -17,9 +17,9 @@ class PendaftarController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $products = Product::all();
+        $kegiatan = Kegiatan::all();
         $pendaftar = Pendaftar::all();
-        return view('pendaftar.index',compact('products','pendaftar'), ['user' => $user, 'type_menu' => '']);
+        return view('pendaftar.index',compact('kegiatan','pendaftar'), ['user' => $user, 'type_menu' => '']);
 
     }
 
@@ -53,7 +53,7 @@ class PendaftarController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $pendaftar = Pendaftar::all();
+        $pendaftar = Pendaftar::where('id_kegiatan',$id)->get();
         return view('pendaftar.show', compact('pendaftar'),['user' => $user, 'type_menu' => '']);
     }
 
