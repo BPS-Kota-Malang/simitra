@@ -99,7 +99,7 @@ class PendaftarController extends Controller
             $status = 1;
         }
         Pendaftar::where('id',$id)->update(['status'=>$status]);
-        return redirect()->route('pendaftar.show',$id)->with('status', 'Status berhasil diubah');
+        return redirect()->back()->with('status', 'Status berhasil diubah');
         return $getStatus;
     }
 }
