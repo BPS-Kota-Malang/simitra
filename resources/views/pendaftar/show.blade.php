@@ -53,8 +53,10 @@
                         <td style="text-align: center">{{ $loop->iteration }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td>{{ $item->user->name }}</td>
-                        <td>{{ $item->kegiatan->product->name }}</td>
-                        <td>{{ $item->kegiatan->jenis }}</td>
+                        @foreach ($bayar as $i)
+                            <td>{{ $i->jumlah_kegiatan }}</td>
+                            <td>{{ $i->total_gaji}}</td>
+                        @endforeach
                         <td>
                         @if($item->status==1)
                             <a href="{{ url('change-status/'.$item->id) }}"
