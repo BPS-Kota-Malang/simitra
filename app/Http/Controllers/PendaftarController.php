@@ -22,8 +22,6 @@ class PendaftarController extends Controller
         $kegiatan = Kegiatan::all();
         $pendaftar = Pendaftar::all();
 
-        
-        
         return view('pendaftar.index',compact('kegiatan','pendaftar'), ['user' => $user, 'type_menu' => '']);
 
     }
@@ -59,7 +57,7 @@ class PendaftarController extends Controller
     {
         $user = Auth::user();
         $pendaftar = Pendaftar::where('id_kegiatan',$id)->get();
-    
+
         $data = DB::table('pembayaran')
                 ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji')
                 ->groupBy('id_users')
@@ -70,14 +68,14 @@ class PendaftarController extends Controller
         //     'count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji
         //      groupBy(id_users)')
         //      ->get();
-        
+
         // dd($data);
 
         // $data = [];
         // $data.name;
-        
+
         return view('pendaftar.show', compact('pendaftar'),['user' => $user, 'type_menu' => '','bayar' => $data]);
-    
+
     }
 
     /**
@@ -115,6 +113,7 @@ class PendaftarController extends Controller
     }
 
     public function changeStatus(Request $request, $id){
+        $kegiatan = Kegiatan::all();
         $getStatus = Pendaftar::select('status')->where('id',$id)->first()  ;
         if($getStatus->status==1){
             $status = 0;
@@ -122,6 +121,14 @@ class PendaftarController extends Controller
             $status = 1;
 
             $user = Auth::user();
+
+            $pembayaran = new Pembayaran();
+            $pembayaran->id_users=$user->id;
+            // $kegiatan->id_kegiatan=$request->kegiatan;
+            $pembayaran->id_kecamatan=$request->kecamatan;
+            $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
+            $pembayaran->gaji=$request->gaji;
+            $pembayaran->save();
 
         }
         Pendaftar::where('id',$id)->update(['status'=>$status]);

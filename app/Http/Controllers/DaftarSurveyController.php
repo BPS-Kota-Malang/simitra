@@ -31,7 +31,6 @@ class DaftarSurveyController extends Controller
     }
 
     public function saveGuest(Request $request){
-        // dd($request->all());
 
         $user = Auth::user();
 
@@ -53,6 +52,9 @@ class DaftarSurveyController extends Controller
         $pendaftar = new Pendaftar();
         $pendaftar->id_users=$user->id;
         $pendaftar->id_kegiatan=$request->kegiatan;
+        $pendaftar->id_kecamatan=$request->kecamatan;
+        $pendaftar->id_sub_kecamatan=$request->sub_kecamatan;
+        $pendaftar->gaji=$request->gaji;
         $pendaftar->save();
 
         Alert::success("Success", "Pendaftaran Berhasil");
