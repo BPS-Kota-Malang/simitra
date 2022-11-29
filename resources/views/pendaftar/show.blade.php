@@ -41,9 +41,10 @@
                 <table class="table table-bordered">
                     <tr style="text-align: center">
                         <th>No</th>
-                        <th>Tanggal</th>
                         <th>Nama</th>
-                        <th>Kegiatan</th>
+                        <th>Jumlah Kegiatan</th>
+                        <th>Kecamatan</th>
+                        <th>Kelurahan</th>
                         <th>Total Gaji</th>
                         <th >Status Pendaftar</th>
                     </tr>
@@ -51,21 +52,25 @@
                     @foreach ($pendaftar as $item)
                     <tr>
                         <td style="text-align: center">{{ $loop->iteration }}</td>
-                        <td>{{ $item->created_at }}</td>
                         <td>{{ $item->user->name }}</td>
-                        @foreach ($bayar as $i)
-                            <td>{{ $i->jumlah_kegiatan }}</td>
-                            <td>{{ $i->total_gaji}}</td>
-                        @endforeach
+                        <td>{{ $item->jumlah_kegiatan }}</td>
+                        <td>{{ $item->kecamatan->kecamatan_tipe }}</td>
+                        <td>{{ $item->subkecamatan->sub_kecamatan}}</td>
+                        <td>{{ $item->total_gaji}}</td>
                         <td>
                         @if($item->status==1)
-                            <a href="{{ url('change-status/'.$item->id) }}"
-                                onclick="return confirm('Apakah anda yakin ingin mengubah status pendaftar ini?')"
-                                class="btn btn-sm btn-success">Diterima</a>
+                            <a class="btn btn-sm btn-success">Diterima</a>
                         @else
-                            <a href="{{ url('change-status/'.$item->id) }}"
-                                onclick="return confirm('Apakah anda yakin ingin mengubah status pendaftar ini?')"
-                                class="btn btn-sm btn-danger">Belum Diterima</a>
+                            <form action="{{ url('change-status/'.$item->id) }}" method="POST" >
+                                @csrf
+                                <input type="hidden" name="kegiatan" value="{{ $item->id_kegiatan }}">
+                                <input type="hidden" name="kecamatan" value="{{ $item->kecamatan->id }}">
+                                <input type="hidden" name="sub_kecamatan" value="{{ $item->subkecamatan->id }}">
+                                <input type="hidden" name="gaji" value="{{ $item->gaji }}" >
+
+                                <button type="submit" onclick="return confirm('Apakah anda yakin ingin mengubah status pendaftar ini?')"
+                                class="btn btn-sm btn-danger">Belum Diterima</button>
+                            </form>
                         @endif
                     </td>
                     </tr>

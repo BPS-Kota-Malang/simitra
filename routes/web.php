@@ -265,7 +265,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('total_gaji', [PembayaranController::class, 'getTotalGaji']);
     Route::resource('kegiatan', KegiatanController::class);
     Route::resource('pendaftar', PendaftarController::class);
-    Route::get('change-status/{id}', [PendaftarController::class,'changeStatus']);
+    Route::post('change-status/{id}', [PendaftarController::class,'changeStatus']);
 
     // Bagian Dokumen Pendukung
     Route::resource('tipe_dokumen', TipeDokumenController::class);

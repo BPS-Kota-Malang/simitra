@@ -56,25 +56,15 @@ class PendaftarController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $pendaftar = Pendaftar::where('id_kegiatan',$id)->get();
+        $pendaftar = Pendaftar::where('id_kegiatan',$id)
+            ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji, id_kecamatan, id_sub_kecamatan ,status')
+            ->with('kecamatan','subkecamatan')
+            ->groupBy('id_users','id_kecamatan','id_sub_kecamatan','status')
+            ->get();
 
-        $data = DB::table('pembayaran')
-                ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji')
-                ->groupBy('id_users')
-                ->get();
+        // dd($pendaftar);
 
-        // $pembayaran = Pembayaran::count();
-        // $bayar = Pembayaran::select(
-        //     'count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji
-        //      groupBy(id_users)')
-        //      ->get();
-
-        // dd($data);
-
-        // $data = [];
-        // $data.name;
-
-        return view('pendaftar.show', compact('pendaftar'),['user' => $user, 'type_menu' => '','bayar' => $data]);
+        return view('pendaftar.show', compact('pendaftar'),['user' => $user, 'type_menu' => '']);
 
     }
 
@@ -113,24 +103,19 @@ class PendaftarController extends Controller
     }
 
     public function changeStatus(Request $request, $id){
-        $kegiatan = Kegiatan::all();
         $getStatus = Pendaftar::select('status')->where('id',$id)->first()  ;
-        if($getStatus->status==1){
-            $status = 0;
-        }else{
-            $status = 1;
+        $status = 1;
 
             $user = Auth::user();
 
             $pembayaran = new Pembayaran();
             $pembayaran->id_users=$user->id;
-            // $kegiatan->id_kegiatan=$request->kegiatan;
+            $pembayaran->id_kegiatan=$request->kegiatan;
             $pembayaran->id_kecamatan=$request->kecamatan;
             $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
             $pembayaran->gaji=$request->gaji;
             $pembayaran->save();
 
-        }
         Pendaftar::where('id',$id)->update(['status'=>$status]);
         return redirect()->back()->with('status', 'Status berhasil diubah');
         return $getStatus;

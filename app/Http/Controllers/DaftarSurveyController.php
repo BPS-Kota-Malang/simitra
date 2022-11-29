@@ -41,13 +41,6 @@ class DaftarSurveyController extends Controller
         $nilai->id_sub_kecamatan=$request->sub_kecamatan;
         $nilai->save();
 
-        // $pembayaran = new Pembayaran();
-        // $pembayaran->id_users=$user->id;
-        // $pembayaran->id_kegiatan=$request->kegiatan;
-        // $pembayaran->id_kecamatan=$request->kecamatan;
-        // $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
-        // $pembayaran->gaji=$request->gaji;
-        // $pembayaran->save();
 
         $pendaftar = new Pendaftar();
         $pendaftar->id_users=$user->id;
