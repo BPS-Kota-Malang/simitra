@@ -41,14 +41,13 @@ class DaftarSurveyController extends Controller
         $nilai->id_sub_kecamatan=$request->sub_kecamatan;
         $nilai->save();
 
-
-        $pendaftar = new Pendaftar();
-        $pendaftar->id_users=$user->id;
-        $pendaftar->id_kegiatan=$request->kegiatan;
-        $pendaftar->id_kecamatan=$request->kecamatan;
-        $pendaftar->id_sub_kecamatan=$request->sub_kecamatan;
-        $pendaftar->gaji=$request->gaji;
-        $pendaftar->save();
+        $pembayaran = new Pembayaran();
+        $pembayaran->id_users=$user->id;
+        $pembayaran->id_kegiatan=$request->kegiatan;
+        $pembayaran->id_kecamatan=$request->kecamatan;
+        $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
+        $pembayaran->gaji=$request->gaji;
+        $pembayaran->save();
 
         Alert::success("Success", "Pendaftaran Berhasil");
         return redirect('/daftar_survei');

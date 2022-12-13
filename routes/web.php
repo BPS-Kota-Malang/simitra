@@ -261,11 +261,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products', ProductController::class);
     Route::resource('nilai', NilaiController::class);
     Route::resource('pembayaran', PembayaranController::class);
-    Route::get('change-status/{id}', [PembayaranController::class,'changeStatus']);
+    Route::get('status_pembayaran/{id}', [PembayaranController::class,'changeStatusPembayaran']);
+    Route::get('status_penerimaan/{id}', [PembayaranController::class,'changeStatusPenerimaan']);
     Route::get('total_gaji', [PembayaranController::class, 'getTotalGaji']);
     Route::resource('kegiatan', KegiatanController::class);
     Route::resource('pendaftar', PendaftarController::class);
-    Route::post('change-status/{id}', [PendaftarController::class,'changeStatus']);
+    // Route::post('change_status/{id}', [PendaftarController::class,'changeStatus'])->name('change_status');
 
     // Bagian Dokumen Pendukung
     Route::resource('tipe_dokumen', TipeDokumenController::class);

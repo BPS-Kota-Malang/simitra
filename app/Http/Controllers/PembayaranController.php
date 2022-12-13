@@ -34,7 +34,7 @@ class PembayaranController extends Controller
         $user = Auth::user();
         $pembayaran = Pembayaran::find($id);
 
-        
+
 
         return view('pembayaran.show', compact('pembayaran'),['user' => $user, 'type_menu' => '']);
     }
@@ -81,31 +81,28 @@ class PembayaranController extends Controller
                         ->with('success','Data Pembayaran Berhasil Dihapus');
     }
 
-    public function changeStatus($id){
-        $getStatus = Pembayaran::select('status')->where('id',$id)->first()  ;
-        if($getStatus->status==1){
-            $status = 0;
+    public function changeStatusPembayaran($id){
+        $getStatus = Pembayaran::select('status_pembayaran')->where('id',$id)->first()  ;
+        if($getStatus->status_pembayaran==1){
+            $status_pembayaran = 0;
         }else{
-            $status = 1;
+            $status_pembayaran = 1;
         }
-        Pembayaran::where('id',$id)->update(['status'=>$status]);
+        Pembayaran::where('id',$id)->update(['status_pembayaran'=>$status_pembayaran]);
         return redirect()->route('pembayaran.index')->with('status', 'Status berhasil diubah');
         return $getStatus;
     }
 
-    public function getTotalGaji(){
-         /**
-         *  Get Total Gaji for every fucking user
-         */
-        // $gaji = Pembayaran::where('id_users', 1)->sum('gaji');
-        // dd($gaji);
-
-
-
-        $gaji = DB::table('pembayaran')
-                ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji')
-                ->groupBy('id_users')
-                ->get();
-        dd($gaji);
+    public function changeStatusPenerimaan($id){
+        $getStatus = Pembayaran::select('status_penerimaan')->where('id',$id)->first()  ;
+        if($getStatus->status_penerimaan==1){
+            $status_penerimaan = 0;
+        }else{
+            $status_penerimaan = 1;
+        }
+        Pembayaran::where('id',$id)->update(['status_penerimaan'=>$status_penerimaan]);
+        return redirect()->route('pembayaran.index')->with('status', 'Status berhasil diubah');
+        return $getStatus;
     }
+
 }

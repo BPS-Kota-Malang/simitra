@@ -75,7 +75,7 @@
                                             {{ $pembayaran->kegiatan->gaji }}
                                         </div>
                                     </div>
-                                     <div class="col-xs-12 col-sm-12 col-md-12">
+                                     {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <strong>Status Pembayaran:</strong>
                                              @if($pembayaran->status==1)
@@ -84,7 +84,7 @@
                                                 <div class="btn btn-sm btn-danger" readonly>Belum dibayar</div>
                                             @endif
                                         </div>
-                                    </div>
+                                    </div> --}}
                                      <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <strong>Tanggal:</strong>

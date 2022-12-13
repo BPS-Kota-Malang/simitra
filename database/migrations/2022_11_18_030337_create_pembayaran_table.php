@@ -13,18 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pendaftar', function (Blueprint $table) {
+        Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_users')->nullable();
             $table->foreign('id_users')->references('id')->on('users');
             $table->unsignedBigInteger('id_kegiatan');
             $table->foreign('id_kegiatan')->references('id')->on('kegiatan');
-            $table->boolean('status')->default(0);
             $table->unsignedBigInteger('id_kecamatan');
             $table->foreign('id_kecamatan')->references('id')->on('kecamatan');
             $table->unsignedBigInteger('id_sub_kecamatan');
             $table->foreign('id_sub_kecamatan')->references('id')->on('sub_kecamatan');
             $table->integer('gaji')->nullable();
+            $table->boolean('status_pembayaran')->default(0);
+            $table->integer('status_penerimaan')->default(0);
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pendaftar');
+        Schema::dropIfExists('pembayaran');
     }
 };

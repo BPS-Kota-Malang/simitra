@@ -10,7 +10,7 @@ class Pembayaran extends Model
     use HasFactory;
 
     protected $table = 'pembayaran';
-    protected $fillable = ['id_users','id_kegiatan','id_kecamatan', 'id_sub_kecamatan','gaji','status'];
+    protected $fillable = ['id_users','id_kegiatan','id_kecamatan', 'id_sub_kecamatan','gaji','status_pembayaran','status_penerimaan'];
 
     public function user()
     {

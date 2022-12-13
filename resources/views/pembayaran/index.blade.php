@@ -45,12 +45,13 @@
           <tr style="text-align: center">
             <th>No</th>
             <th>Nama</th>
-            <th width="300px">Survei yang Diikuti</th>
+            <th >Survei yang Diikuti</th>
             <th>Jenis Survei</th>
             <th>Gaji</th>
             <th>Jenis Mitra</th>
-            <th >Status Pembayaran</th>
-            <th width="300px">Aksi</th>
+            <th width="100px">Status Pembayaran</th>
+            <th >Status Peneriman</th>
+            <th width="250px">Aksi</th>
           </tr>
 
           @foreach ($pembayaran as $item)
@@ -70,15 +71,35 @@
             </td>
             <td>{{ $item->kegiatan->jenis_mitra }}</td>
             <td>
-                @if($item->status==1)
-                    <a href="{{ url('change-status/'.$item->id) }}"
+                @if($item->status_pembayaran==1)
+                    <a href="{{ url('status_pembayaran/'.$item->id) }}"
                         onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
                         class="btn btn-sm btn-success">Sudah dibayar</a>
                 @else
-                    <a href="{{ url('change-status/'.$item->id) }}"
+                    <a href="{{ url('status_pembayaran/'.$item->id) }}"
                         onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
                         class="btn btn-sm btn-danger">Belum dibayar</a>
                 @endif
+            </td>
+            <td>
+                                            <select class="dropdown" name="status_penerimaan" required = "" value="{{ $item->status_pembayaran }}">
+                                                <option selected disabled >Pilih Status</option>
+                                                <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                                    onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                                    class="btn btn-sm btn-warning">Belum Diterima
+                                                    {{-- <option value="0">Belum Diterima</option> --}}
+                                                </option>
+                                                <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                                    onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                                    class="btn btn-sm btn-success">Diterima
+                                                    {{-- <option value="1">Diterima</option> --}}
+                                                </option>
+                                                <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                                    onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                                    class="btn btn-sm btn-danger">Ditolak
+                                                    {{-- <option value="2">Ditolak</option> --}}
+                                                </option>
+                                            </select>
             </td>
             <td >
                 <form action="{{ route('pembayaran.destroy',$item->id) }}" method="POST">
