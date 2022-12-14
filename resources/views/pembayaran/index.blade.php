@@ -81,27 +81,8 @@
                         class="btn btn-sm btn-danger">Belum dibayar</a>
                 @endif
             </td>
+            <td></td>
             <td>
-                                            <select class="dropdown" name="status_penerimaan" required = "" value="{{ $item->status_pembayaran }}">
-                                                <option selected disabled >Pilih Status</option>
-                                                <option href="{{ url('status_pembayaran/'.$item->id) }}"
-                                                    onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
-                                                    class="btn btn-sm btn-warning">Belum Diterima
-                                                    {{-- <option value="0">Belum Diterima</option> --}}
-                                                </option>
-                                                <option href="{{ url('status_pembayaran/'.$item->id) }}"
-                                                    onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
-                                                    class="btn btn-sm btn-success">Diterima
-                                                    {{-- <option value="1">Diterima</option> --}}
-                                                </option>
-                                                <option href="{{ url('status_pembayaran/'.$item->id) }}"
-                                                    onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
-                                                    class="btn btn-sm btn-danger">Ditolak
-                                                    {{-- <option value="2">Ditolak</option> --}}
-                                                </option>
-                                            </select>
-            </td>
-            <td >
                 <form action="{{ route('pembayaran.destroy',$item->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('pembayaran.show',$item->id) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('pembayaran.edit',$item->id) }}">Edit</a>

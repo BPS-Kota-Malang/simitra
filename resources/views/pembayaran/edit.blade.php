@@ -39,77 +39,136 @@
                 @endif
 
                 <div class="card-body">
-                <form action="{{ route('pembayaran.update',$pembayaran->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="row">
-                        @if($pembayaran->kegiatan->jenis_mitra=='Honor')
+                    <form action="{{ route('pembayaran.update',$pembayaran->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+                            @if($pembayaran->kegiatan->jenis_mitra=='Honor')
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                        <strong>Gaji:</strong>
-                                        <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
-                                        class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <strong>Kecamatan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" name="id_kecamatan" id="id_kecamatan">
-                                        <option selected disabled>Pilih Kecamatan</option>
-                                        @foreach ($kecamatan as $item)
-                                        <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
-                                        @endforeach
-                                    </select>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <strong>Kelurahan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" name="id_sub_kecamatan" id="id_sub_kecamatan">
-                                        <option selected disabled>Pilih Kelurahan</option>
-                                        @foreach ($sub_kecamatan as $item)
-                                        <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
-                                        @endforeach
-                                    </select>
-                            </div>
-                         @elseif($pembayaran->kegiatan->jenis_mitra=='Bulanan')
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                        <strong>Gaji:</strong>
-                                        <input type="text" name="gaji" value="{{ $pembayaran->kegiatan->gaji  }}"
-                                        class="form-control" readonly >
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <strong>Kecamatan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" name="id_kecamatan" id="id_kecamatan">
-                                        <option selected disabled>Pilih Kecamatan</option>
-                                        @foreach ($kecamatan as $item)
-                                        <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
-                                        @endforeach
-                                    </select>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <strong>Kelurahan:</strong>
-                                    <select class="custom-select my-1 mr-sm-2" name="id_sub_kecamatan" id="id_sub_kecamatan">
-                                        <option selected disabled>Pilih Kelurahan</option>
-                                        @foreach ($sub_kecamatan as $item)
-                                        <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
-                                        @endforeach
-                                    </select>
-                            </div>
-                        @else
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                        <strong>Gaji:</strong>
-                                        <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
+                                    <strong>Gaji:</strong>
+                                    <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
                                         class="form-control">
                                 </div>
                             </div>
-                        @endif
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <strong>Kecamatan:</strong>
+                                <select class="custom-select my-1 mr-sm-2" name="id_kecamatan" id="id_kecamatan">
+                                    <option selected disabled>Pilih Kecamatan</option>
+                                    @foreach ($kecamatan as $item)
+                                    <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <br>
+                                <strong>Kelurahan:</strong>
+                                <select class="custom-select my-1 mr-sm-2" name="id_sub_kecamatan"
+                                    id="id_sub_kecamatan">
+                                    <option selected disabled>Pilih Kelurahan</option>
+                                    @foreach ($sub_kecamatan as $item)
+                                    <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <br>
+                                <td>
+                                    <select class="dropdown" name="status_penerimaan" required=""
+                                        value="{{ $item->status_pembayaran }}">
+                                        <option selected disabled>Pilih Status</option>
+                                        <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                            onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                            class="btn btn-sm btn-warning">Belum Diterima
+                                            {{--
+                                        <option value="0">Belum Diterima</option> --}}
+                                        </option>
+                                        <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                            onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                            class="btn btn-sm btn-success">Diterima
+                                            {{--
+                                        <option value="1">Diterima</option> --}}
+                                        </option>
+                                        <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                            onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                            class="btn btn-sm btn-danger">Ditolak
+                                            {{--
+                                        <option value="2">Ditolak</option> --}}
+                                        </option>
+                                    </select>
+                                </td>
+                            </div>
 
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            @elseif($pembayaran->kegiatan->jenis_mitra=='Bulanan')
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Gaji:</strong>
+                                    <input type="text" name="gaji" value="{{ $pembayaran->kegiatan->gaji  }}"
+                                        class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <strong>Kecamatan:</strong>
+                                <select class="custom-select my-1 mr-sm-2" name="id_kecamatan" id="id_kecamatan">
+                                    <option selected disabled>Pilih Kecamatan</option>
+                                    @foreach ($kecamatan as $item)
+                                    <option value="{{ $item->id }}">{{$item->kecamatan_tipe}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <br>
+                                <strong>Kelurahan:</strong>
+                                <select class="custom-select my-1 mr-sm-2" name="id_sub_kecamatan"
+                                    id="id_sub_kecamatan">
+                                    <option selected disabled>Pilih Kelurahan</option>
+                                    @foreach ($sub_kecamatan as $item)
+                                    <option value="{{ $item->id }}">{{$item->sub_kecamatan}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <td>
+                                    <br>
+                                    <select class="dropdown" name="status_penerimaan" required=""
+                                        value="{{ $item->status_pembayaran }}">
+                                        <option selected disabled>Pilih Status</option>
+                                        <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                            onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                            class="btn btn-sm btn-warning">Belum Diterima
+                                            {{--
+                                        <option value="0">Belum Diterima</option> --}}
+                                        </option>
+                                        <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                            onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                            class="btn btn-sm btn-success">Diterima
+                                            {{--
+                                        <option value="1">Diterima</option> --}}
+                                        </option>
+                                        <option href="{{ url('status_pembayaran/'.$item->id) }}"
+                                            onclick="return confirm('Apakah anda yakin ingin mengubah status pembayaran ini?')"
+                                            class="btn btn-sm btn-danger">Ditolak
+                                            {{--
+                                        <option value="2">Ditolak</option> --}}
+                                        </option>
+                                    </select>
+                                </td>
+                            </div>
+                            @else
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Gaji:</strong>
+                                    <input type="text" name="gaji" value="{{ $pembayaran->gaji  }}"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            @endif
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
                 </div>
 
                 <div class="card-footer bg-whitesmoke">
