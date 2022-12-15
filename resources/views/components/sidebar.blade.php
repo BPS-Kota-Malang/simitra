@@ -194,23 +194,23 @@
             </li>
              <li class="{{ Request::is('kegiatan.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                    href="{{ route('kegiatan.index') }}"><i class="fa-solid fa-calendar"></i> <span>Kegiatan</span></a>
+                    href="{{ route('kegiatan.index') }}"><i class="fas fa-solid fa-calendar"></i> <span>Kegiatan</span></a>
             </li>
             <li class="{{ Request::is('/daftar_survei') ? 'active' : '' }}">
             <a class="nav-link"
-                    href="/daftar_survei"><i class="fa-solid fa-clipboard-list"></i> <span>Daftar Survei</span></a>
+                    href="/daftar_survei"><i class="fas fa-solid fa-clipboard-list"></i> <span>Daftar Survei</span></a>
             </li>
             <li class="{{ Request::is('nilai.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                     href="{{ route('nilai.index') }}"><i class="fa-solid fa-pen-to-square"></i><span>Nilai</span></a>
+                     href="{{ route('nilai.index') }}"><i class="fas fa-solid fa-pen-to-square"></i><span>Nilai</span></a>
             </li>
             <li class="{{ Request::is('pembayaran.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                    href="{{ route('pembayaran.index') }}"><i class="fa-solid fa-money-bill"></i><span>Pembayaran</span></a>
+                    href="{{ route('pembayaran.index') }}"><i class="fas fa-solid fa-money-bill"></i><span>Pembayaran</span></a>
             </li>
             <li class="{{ Request::is('pendaftar.index') ? 'active' : '' }}">
                 <a class="nav-link"
-                    href="{{ route('pendaftar.index') }}"><i class="fa-solid fa-id-card"></i><span>Pendaftar</span></a>
+                    href="{{ route('pendaftar.index') }}"><i class="fas fa-solid fa-id-card"></i><span>Pendaftar</span></a>
             </li>
             <li class="nav-item dropdown {{ $type_menu === 'bootstrap' ? 'active' : '' }}">
                 <!-- <a href="#"
