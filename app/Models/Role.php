@@ -13,4 +13,8 @@ class Role extends Model
         'name',
         'guard_name'
     ];
+
+    public function guestUser() {
+        return $this->hasMany(User::class);
+    }
 }

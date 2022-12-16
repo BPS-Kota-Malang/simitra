@@ -33,7 +33,7 @@
                             <div class="profile-widget-items">
                                 <div class="profile-widget-item">
                                     <div class="profile-widget-item-value">Jabatan</div>
-                                    <div class="profile-widget-item-label">{{ $user->jabatan }}</div>
+                                    <div class="profile-widget-item-label">{{ $user->guestRole->name }}</div>
                                 </div>
                             </div>
                         </div>
@@ -65,13 +65,13 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-md-4">Kecamatan</div>
-                                    <div class="col-md-6 font-weight-bold">{{$user->kecamatan}}</div>
+                                    <div class="col-md-6 font-weight-bold">{{$user->guestKecamatan->kecamatan_tipe}}</div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-md-4">Kelurahan</div>
-                                    <div class="col-md-6 font-weight-bold">{{$user->kelurahan}}</div>
+                                    <div class="col-md-6 font-weight-bold">{{$user->guestKelurahan->sub_kecamatan}}</div>
                                 </div>
                             </li>
                             <li class="list-group-item">
@@ -136,7 +136,6 @@
                                         <textarea class="form-control" rows="3" value="{{ $user->alamat }}"
                                             name="alamat" required=""
                                             placeholder="Silahkan masukkan alamat anda .."></textarea>
-
                                     </div>
                                 </div>
                                 <div class="row">
@@ -157,10 +156,10 @@
                                         <select class="form-control py-0" name="agama" required=""
                                             value="{{ $user->agama }}">
                                             <option selected disabled>Pilih Agama</option>
-                                            <option value="islam">Islam</option>
-                                            <option value="kristen">Kristen</option>
-                                            <option value="katolik">Katolik</option>
-                                            <option value="hindu">Hindu</option>
+                                            <option value="Islam">Islam</option>
+                                            <option value="Kristen">Kristen</option>
+                                            <option value="Katolik">Katolik</option>
+                                            <option value="Hindu">Hindu</option>
                                             <option value="khonghucu">Khong Hu Cu</option>
                                         </select>
                                     </div>
