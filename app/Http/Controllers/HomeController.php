@@ -37,9 +37,10 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $kecamatan = Kecamatan::all();
+        $role = Role::all();
         $sub_kecamatan = SubKecamatan::all();
-        $roles = Role::pluck('name','name')->all();
-         return view('profile',compact('kecamatan','sub_kecamatan','roles'), ['user' => $user, 'type_menu' => 'layout']);
+        // $roles = Role::pluck('name','name')->all();
+         return view('profile',compact('kecamatan','sub_kecamatan','role'), ['user' => $user, 'type_menu' => 'layout']);
     }
 
     public function profileStore(ProfileRequest $request) {

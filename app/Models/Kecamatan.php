@@ -15,4 +15,5 @@ class Kecamatan extends Model
     public function guestSubKecamatan() {
         return $this->hasMany(SubKecamatan::class, 'id_sub_kecamatan');
     }
+    
 }

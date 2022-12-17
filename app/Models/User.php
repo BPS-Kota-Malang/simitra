@@ -60,4 +60,17 @@ class User extends Authenticatable
      public function guestNilai() {
         return $this->hasMany(Nilai::class, 'id_nilai');
     }
+
+    public function guestRole() {
+        return $this->belongsTo(Role::class, 'jabatan');
+    }
+
+    public function guestKecamatan() {
+        return $this->belongsTo(Kecamatan::class, 'kecamatan');
+    }
+
+    public function guestKelurahan() {
+        return $this->belongsTo(SubKecamatan::class, 'kelurahan');
+    }
+
 }
