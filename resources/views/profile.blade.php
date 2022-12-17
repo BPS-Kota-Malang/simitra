@@ -28,7 +28,7 @@
                 <div class="col-12 col-md-12 col-lg-5">
                     <div class="card profile-widget">
                         <div class="profile-widget-header">
-                            <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
+                            <img alt="image" src="{{ url('img/avatar/avatar-1.png') }}"
                                 class="rounded-circle profile-widget-picture">
                             <div class="profile-widget-items">
                                 <div class="profile-widget-item">
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
-                        <form action="{{route('profileStore')}}" method="POST" class="needs-validation" novalidate="">
+                        <form action="{{route('profileStore')}}" enctype="multipart/form-data" method="POST" class="needs-validation" novalidate="">
                             @csrf
                             <div class="card-header">
                                 <h4>Edit Profile</h4>
@@ -186,7 +186,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-10 col-12">
                                         <label>Kecamatan</label>
-                                        <select class="form-control py-0" name="kecamatan" required="">
+                                        <select class="form-control py-0" name="kecamatan">
                                             <option disabled value>Pilih Kecamatan</option>
                                             <option value="{{$user->kecamatan}}">
                                                 {{$user->guestKecamatan->kecamatan_tipe}}</option>
@@ -199,7 +199,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-10 col-12">
                                         <label>Kelurahan</label>
-                                        <select class="form-control py-0" name="kelurahan" required="">
+                                        <select class="form-control py-0" name="kelurahan">
                                             <option disabled value>Pilih Kelurahan</option>
                                             <option value="{{$user->kelurahan}}">
                                                 {{$user->guestKelurahan->sub_kecamatan}}</option>
