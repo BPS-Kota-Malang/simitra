@@ -24,6 +24,21 @@
                 Sesuaikan informasi dengan pribadi anda sendiri.
             </p>
 
+<<<<<<< HEAD
+                <div class="row mt-sm-4">
+                    <div class="col-12 col-md-12 col-lg-5">
+                        <div class="card profile-widget">
+                            <div class="profile-widget-header">
+                                {{-- <img alt="image" class="rounded-circle profile-widget-picture">{{ $user->foto }}</img> --}}
+                                <img alt="foto" class="rounded-circle profile-widget-picture"
+                                    width="150px"
+                                    src="{{ asset('storage/'.$user->foto) }}">
+                                <div class="profile-widget-items">
+                                    <div class="profile-widget-item">
+                                        <div class="profile-widget-item-value">Jabatan</div>
+                                        <div class="profile-widget-item-label">{{ $user->jabatan }}</div>
+                                    </div>
+=======
             <div class="row mt-sm-4">
                 <div class="col-12 col-md-12 col-lg-5">
                     <div class="card profile-widget">
@@ -34,6 +49,7 @@
                                 <div class="profile-widget-item">
                                     <div class="profile-widget-item-value">Jabatan</div>
                                     <div class="profile-widget-item-label">{{ $user->guestRole->name }}</div>
+>>>>>>> 15880bfefb1b84a139ee281b17ea8440f2acf44b
                                 </div>
                             </div>
                         </div>

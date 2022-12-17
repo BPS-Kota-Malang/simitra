@@ -48,6 +48,12 @@ class HomeController extends Controller
             // dd($request->all());
             $user = User::find(Auth::user()->id);
 
+            if($user->foto && file_exists(storage_path('app/public/'
+            . $user->foto))){
+            Storage::delete('public/' . $user->foto);
+            }
+            $image_name = $request->file('image')->store('images', 'public');
+
             $user -> update([
             'name' => $request->name,
             'email' => $request->email,
@@ -60,10 +66,11 @@ class HomeController extends Controller
             'rt' => $request->rt,
             'rw' => $request->rw,
             'pgl_sensus' => implode(',', $request -> pengalaman),
-            'foto' => $request->foto,
+            'foto' => $image_name,
 
         ]);
 
+        $user->save();
         return redirect()->route('profile')->with('status', 'Data Profile berhasil di update');
     }
 
