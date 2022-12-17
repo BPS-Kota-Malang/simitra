@@ -30,9 +30,10 @@
                     <div class="col-12 col-md-12 col-lg-5">
                         <div class="card profile-widget">
                             <div class="profile-widget-header">
-                                <img alt="image"
-                                    src="{{ asset('img/avatar/avatar-1.png') }}"
-                                    class="rounded-circle profile-widget-picture">
+                                {{-- <img alt="image" class="rounded-circle profile-widget-picture">{{ $user->foto }}</img> --}}
+                                <img alt="foto" class="rounded-circle profile-widget-picture"
+                                    width="150px"
+                                    src="{{ asset('storage/'.$user->foto) }}">
                                 <div class="profile-widget-items">
                                     <div class="profile-widget-item">
                                         <div class="profile-widget-item-value">Jabatan</div>
