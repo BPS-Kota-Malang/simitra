@@ -50,7 +50,7 @@
             <th>Gaji</th>
             <th>Jenis Mitra</th>
             <th width="100px">Status Pembayaran</th>
-            <th >Status Peneriman</th>
+            <th >Status Penerimaan</th>
             <th width="250px">Aksi</th>
           </tr>
 

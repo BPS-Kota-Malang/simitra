@@ -21,16 +21,16 @@ class User extends Authenticatable
         'name',
         'email',
         'alamat',
-        'jabatan',
+        'role_id',
         'agama',
         'jenis_kelamin',
-        'kecamatan',
-        'kelurahan',
+        'kecamatan_id',
+        'kelurahan_id',
         'rt',
         'rw',
         'pgl_sensus',
         'foto',
-        'password',
+        'password'
 
     ];
 
@@ -62,15 +62,15 @@ class User extends Authenticatable
     }
 
     public function guestRole() {
-        return $this->belongsTo(Role::class, 'jabatan');
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
     public function guestKecamatan() {
-        return $this->belongsTo(Kecamatan::class, 'kecamatan');
+        return $this->belongsTo(Kecamatan::class, 'kecamatan_id');
     }
 
     public function guestKelurahan() {
-        return $this->belongsTo(SubKecamatan::class, 'kelurahan');
+        return $this->belongsTo(SubKecamatan::class, 'kelurahan_id');
     }
 
 }

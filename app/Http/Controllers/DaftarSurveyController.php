@@ -47,6 +47,7 @@ class DaftarSurveyController extends Controller
         $pembayaran->id_kecamatan=$request->kecamatan;
         $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
         $pembayaran->gaji=$request->gaji;
+        $pembayaran->status_penerimaan='Belum diterima';
         $pembayaran->save();
 
         Alert::success("Success", "Pendaftaran Berhasil");

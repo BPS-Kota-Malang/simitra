@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreign('id_sub_kecamatan')->references('id')->on('sub_kecamatan');
             $table->integer('gaji')->nullable();
             $table->boolean('status_pembayaran')->default(0);
-            $table->integer('status_penerimaan')->default(0);
+            $table->string('status_penerimaan');
             $table->timestamps();
         });
     }

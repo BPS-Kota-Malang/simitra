@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            PermissionTableSeeder::class,
+            RoleSeeder::class,
+            KecamatanSeeder::class,
+            SubKecamatanSeeder::class,
             CreateAdminUserSeeder::class,
             TipeDokumenSeeder::class,
-            KecamatanSeeder::class,
-            SubKecamatanSeeder::class
         ]);
     }
 }

@@ -19,11 +19,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('alamat')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->foreignId('role_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->nullable();
             $table->string('agama')->nullable();
             $table->string('jenis_kelamin')->nullable();
-            $table->string('kecamatan')->nullable();
-            $table->string('kelurahan')->nullable();
+            $table->foreignId('kecamatan_id')->constrained('kecamatan')->cascadeOnDelete()->cascadeOnUpdate()->nullable();
+            $table->foreignId('kelurahan_id')->constrained('sub_kecamatan')->cascadeOnDelete()->cascadeOnUpdate()->nullable();
             $table->string('rt')->nullable();
             $table->string('rw')->nullable();
             $table->string('pgl_sensus')->nullable();

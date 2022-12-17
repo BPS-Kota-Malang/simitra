@@ -54,17 +54,6 @@ class PendaftarController extends Controller
      */
     public function show($id)
     {
-        // $user = Auth::user();
-
-        // $pendaftar = Pendaftar::where('id_kegiatan',$id)
-        //     ->selectRaw('count(id_users) as jumlah_kegiatan, id_users, sum(gaji) as total_gaji, id_kecamatan, id_sub_kecamatan ,status')
-        //     ->with('kecamatan','subkecamatan')
-        //     ->groupBy('id_users')
-        //     ->get();
-
-        // // dd($pendaftar);
-
-        // return view('pendaftar.show', compact('pendaftar'),['user' => $user, 'type_menu' => '']);
 
     }
 
@@ -99,26 +88,6 @@ class PendaftarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
-
-    // public function changeStatus($id){
-    //     $kegiatan = Kegiatan::all();
-    //     $getStatus = Pendaftar::select('status')->where('id',$id)->first()  ;
-    //     $status = 1;
-
-    //         $user = Auth::user();
-
-    //         $pembayaran = new Pembayaran();
-    //         $pembayaran->id_users=$user->id;
-    //         $pembayaran->id_kegiatan=$request->kegiatan;
-    //         $pembayaran->id_kecamatan=$request->kecamatan;
-    //         $pembayaran->id_sub_kecamatan=$request->sub_kecamatan;
-    //         $pembayaran->gaji=$request->gaji;
-    //         $pembayaran->save();
-
-    //     Pendaftar::where('id',$id)->update(['status'=>$status]);
-    //     return redirect()->back()->with('status', 'Status berhasil diubah');
-    //     return $getStatus;
-    // }
 }

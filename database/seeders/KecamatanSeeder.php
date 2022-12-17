@@ -34,5 +34,10 @@ class KecamatanSeeder extends Seeder
         Kecamatan::create(
             ['kecamatan_tipe'     => '[050] Lowokwaru']
         );
+
+        Kecamatan::create(
+            ['kecamatan_tipe'     => '-']
+        );
     }
+
 }

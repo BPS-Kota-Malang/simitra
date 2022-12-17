@@ -305,5 +305,10 @@ class SubKecamatanSeeder extends Seeder
             ['sub_kecamatan'     => '[012] Tlogomas',
              'id_kecamatan'      => 5]
         );
+
+        SubKecamatan::create(
+            ['sub_kecamatan'     => '-',
+             'id_kecamatan'      => 6]
+        );
     }
 }

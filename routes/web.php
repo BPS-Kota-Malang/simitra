@@ -245,7 +245,7 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 // Bagian Dashboard
 Route::get('/general_dashboard', [App\Http\Controllers\DashboardController::class, 'general_dashboard'])->name('general_dashboard');
 Route::get('/survey_dashboard', [App\Http\Controllers\DashboardController::class, 'survey_dashboard'])->name('survey_dashboard');
-Route::get('/rekrutment_dashboard', [App\Http\Controllers\DashboardController::class, 'rekrutment_dashboard'])->name('rekrutment_dashboard');
+Route::get('/rekrutment_dashboard', [App\Http\ContSrollers\DashboardController::class, 'rekrutment_dashboard'])->name('rekrutment_dashboard');
 
 //Bagian Daftar Survey
 Route::get('/daftar_survei', [DaftarSurveyController::class, 'daftarSurvey'])->name('daftarSurvey');
